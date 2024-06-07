@@ -1,4 +1,4 @@
-# portfolio.github.io
+# aps-portfolio.github.io
 
 <dl>
 <dt>Course Name</dt>
