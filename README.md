@@ -59,7 +59,7 @@ A portfolio focused on LinkedIn is necessary because it addresses the complex ch
 
 **Algorithm**: Longest Common Subsequence
 
-The Longest Common Subsequence (LCS) algorithm can be effectively utilized in LinkedIn profile matching for job fit. In this context, the LCS algorithm helps identify the most relevant job matches for a user profile by comparing the sequences of skills, experiences, and qualifications listed in both job descriptions and user profiles. By treating job descriptions and user profiles as sequences of keywords(skills, job titles, companies, etc.). The LCS algorithm finds the longest subsequence common to both. This subsequence represents the overlapping skills that are necessary for the job position.
+The Longest Common Subsequence (LCS) algorithm can be effectively utilized in LinkedIn profile matching for job fit. The LCS algorithm helps identify the most relevant job matches for a user profile by comparing the sequences of skills, experiences, and qualifications listed in both job descriptions and user profiles. By treating job descriptions and user profiles as sequences of keywords(skills, job titles, companies, etc.). The LCS algorithm finds the longest subsequence common to both. This subsequence represents the overlapping skills that are necessary for the job position.
 
 For example, consider a job description that lists skills such as "Java", "Project Management", "Agile", and "Team Leadership." A user's profile have "Python", "Java", "Agile", "Software Development", and "Team Leadership." The LCS algorithm will identify "Java", "Agile", and "Team Leadership" as the common subsequence. The length and content of this common subsequence provide a measure of how well the user's profile matches the job requirements. Profiles with longer common subsequences are deemed more suitable, enabling LinkedIn to prioritize and recommend jobs that closely align with a user's skills and experiences.
 
@@ -70,4 +70,20 @@ Time Complexity: O(N * M) where N and M are the length of the two strings.
 Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the length of the two strings.
 
 [Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp)
+* * *
+
+### 2. **Missing Sections in a LinkedIn Profile**
+
+**Algorithm**: Set Difference
+
+LinkedIn profiles can be divided into different sections such as "Experience," "Skills," "Education," "Certifications," "Projects," and more. To help users enhance their profiles, it’s important to identify which of these recommended sections are currently missing. Using sets, we can represent the existing sections of a user profile and the recommended sections. By calculating the difference between these two sets, we can easily determine the missing sections.
+
+* * *
+
+### 3. **Common Skills Between Two Profiles**
+
+**Algorithm**: Longest Common Substring
+
+The "Longest Common Substring" algorithm can be effectively applied to identify common skills between two profiles on LinkedIn. In this context, each profile can be seen as a sequence of skills, and the algorithm is used to find the longest sequence of skills that appears in both profiles.
+
 * * *
