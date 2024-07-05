@@ -69,5 +69,5 @@ Time Complexity: O(N * M) where N and M are the length of the two strings.
 
 Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the length of the two strings.
 
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/codes/Longest_Common_Subsequence.cpp)
+[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp)
 * * *
