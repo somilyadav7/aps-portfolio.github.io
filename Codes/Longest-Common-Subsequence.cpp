@@ -9,9 +9,9 @@ int lcs(string& s1, string& s2, int ind1, int ind2, vector<vector<int>>& dp) {
         return dp[ind1][ind2];
 
     if (s1[ind1] == s2[ind2])
-        return dp[ind1][ind2] = 1 + lcsUtil(s1, s2, ind1 - 1, ind2 - 1, dp);
+        return dp[ind1][ind2] = 1 + lcs(s1, s2, ind1 - 1, ind2 - 1, dp);
     else
-        return dp[ind1][ind2] = max(lcsUtil(s1, s2, ind1, ind2 - 1, dp), lcsUtil(s1, s2, ind1 - 1, ind2, dp));
+        return dp[ind1][ind2] = max(lcs(s1, s2, ind1, ind2 - 1, dp), lcs(s1, s2, ind1 - 1, ind2, dp));
 }
 
 int main() {
