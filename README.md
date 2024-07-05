@@ -31,13 +31,13 @@ This page hosts:
 **Enhancing LinkedIn Services through Data Structures and Algorithms**
 * * *
 
-# Introduction
+## Introduction
 
   LinkedIn is a social network for the business community. Founded in 2002, the site is a place for professionals to connect with past and current colleagues, increase business connections, network within their industry, discuss business ideas, search for jobs and look for new hires. This portfolio project explores how applying data structures and algorithms can significantly enhance LinkedIn's efficiency and effectiveness, drawing on the theoretical knowledge and practical skills from Algorithmic Problem Solving (APS).
 
-By optimizing recommendation systems for improved relevance, refining search algorithms for better accuracy and speed, and addressing other core functionalities, this project demonstrates the vast potential for enhancement within LinkedIn’s ecosystem. Each use case bridges the gap between theory and practical application, showcasing how algorithmic techniques can solve real-world business challenges, thereby improving LinkedIn’s performance, reliability, and efficiency.
+By optimizing recommendation systems for improved relevance, refining search algorithms for better accuracy and speed, and addressing other core functionalities, this project demonstrates the vast potential for enhancement within LinkedIn ecosystem. Each use case bridges the gap between theory and practical application, showcasing how algorithmic techniques can solve real-world business challenges, thereby improving LinkedIn performance, reliability, and efficiency.
 
-# Need of Portfolio
+## Need of Portfolio
 
 A portfolio focused on LinkedIn is necessary because it addresses the complex challenges of optimizing a professional networking platform through the application of data structures and algorithms (DSA). Enhancing functionalities such as search algorithms, recommendation systems, and network analysis can significantly improve user engagement and satisfaction. By applying theoretical knowledge from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to real-world scenarios, this portfolio bridges the gap between academic learning and practical implementation. It not only showcases the ability to solve real-world problems but also demonstrates a commitment to improving the efficiency and effectiveness of LinkedIn's services, making it an invaluable resource for professional development and innovation in the tech industry.
 
@@ -53,7 +53,7 @@ A portfolio focused on LinkedIn is necessary because it addresses the complex ch
 
 **5.** Improve data processing and analytics to provide valuable insights to LinkedIn users about their profiles and industry trends.
 
-# Business Use Cases
+## Business Use Cases
 
 ### 1. **Profile Matching for Job Fit**
 
@@ -64,9 +64,10 @@ The Longest Common Subsequence (LCS) algorithm can be effectively utilized in Li
 For example, consider a job description that lists skills such as "Java", "Project Management", "Agile", and "Team Leadership." A user's profile have "Python", "Java", "Agile", "Software Development", and "Team Leadership." The LCS algorithm will identify "Java", "Agile", and "Team Leadership" as the common subsequence. The length and content of this common subsequence provide a measure of how well the user's profile matches the job requirements. Profiles with longer common subsequences are deemed more suitable, enabling LinkedIn to prioritize and recommend jobs that closely align with a user's skills and experiences.
 
 **Complexity Analysis**
-Time Complexity: $O(N * M)$ where N and M are the length of the two strings.
 
-Space Complexity: $O(N+M)$ auxiliary recursion stack space where N and M are the length of the two strings.
+Time Complexity: O(N * M) where N and M are the length of the two strings.
 
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/edit/main/codes/Longest-Common-Subsequence.cpp)
+Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the length of the two strings.
+
+[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/codes/Longest_Common_Subsequence.cpp)
 * * *
