@@ -33,25 +33,25 @@ This page hosts:
 
 ## Introduction
 
-  LinkedIn is a social network for the business community. Founded in 2002, the site is a place for professionals to connect with past and current colleagues, increase business connections, network within their industry, discuss business ideas, search for jobs and look for new hires. This portfolio project explores how applying data structures and algorithms can significantly enhance LinkedIn's efficiency and effectiveness, drawing on the theoretical knowledge and practical skills from Algorithmic Problem Solving (APS).
+  LinkedIn is a social network for the business community. Founded in 2002, the site is a place for professionals to connect with past and current colleagues, increase business connections, network within their industry, discuss business ideas, search for jobs and look for new hires. This portfolio project explores how applying data structures and algorithms can significantly enhance LinkedIn efficiency and effectiveness, drawing on the theoretical knowledge and practical skills from Algorithmic Problem Solving (APS) course.
 
-By optimizing recommendation systems for improved relevance, refining search algorithms for better accuracy and speed, and addressing other core functionalities, this project demonstrates the vast potential for enhancement within LinkedIn ecosystem. Each use case bridges the gap between theory and practical application, showcasing how algorithmic techniques can solve real-world business challenges, thereby improving LinkedIn performance, reliability, and efficiency.
+By optimizing recommendation systems for improved relevance, refining search algorithms for better accuracy and speed, and addressing other core functionalities, this portfolio demonstrates the vast potential for enhancement of LinkedIn. Each use case bridges the gap between theory and practical application, showcasing how advanced algorithms can solve real-world business challenges and improving LinkedIn performance, reliability and efficiency.
 
 ## Need of Portfolio
 
-A portfolio focused on LinkedIn is necessary because it addresses the complex challenges of optimizing a professional networking platform through the application of data structures and algorithms (DSA). Enhancing functionalities such as search algorithms, recommendation systems, and network analysis can significantly improve user engagement and satisfaction. By applying theoretical knowledge from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to real-world scenarios, this portfolio bridges the gap between academic learning and practical implementation. It not only showcases the ability to solve real-world problems but also demonstrates a commitment to improving the efficiency and effectiveness of LinkedIn's services, making it an invaluable resource for professional development and innovation in the tech industry.
+A portfolio focused on LinkedIn is necessary because it addresses the complex challenges of optimizing a professional networking platform through the application of data structures and algorithms (DSA). Enhancing functionalities such as search algorithms, recommendation systems and network analysis can significantly improve user engagement and satisfaction. By applying theoretical knowledge from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to real-world scenarios, this portfolio bridges the gap between academic learning and practical implementation. It not only showcases the ability to solve real-world problems but also demonstrates a commitment to improving the efficiency and effectiveness of LinkedIn services, making it an invaluable resource for professional development and innovation in the tech industry.
 
 # Objectives
 
-**1.** Apply theoretical concepts from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) courses to practical, real-world problems within the LinkedIn platform.
+**1.** Applying theoretical concepts from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to practical, real-world problems within the LinkedIn platform.
 
-**2.** Address specific business challenges faced by LinkedIn through the application of algorithmic problem-solving.
+**2.** Addressing specific business challenges faced by LinkedIn through the application of algorithmic problem solving.
 
-**3.** Explore and implement algorithmic solutions that enhance LinkedIn’s search functionality, recommendation systems, and user engagement.
+**3.** Exploring and implementing algorithmic solutions that enhance LinkedIn search functionality, recommendation systems, network analysis and user engagement.
 
-**4.** Optimize network analysis and connection suggestions to foster more meaningful professional relationships.
+**4.** Optimizing network analysis and connection suggestions to foster more meaningful professional relationships.
 
-**5.** Improve data processing and analytics to provide valuable insights to LinkedIn users about their profiles and industry trends.
+**5.** Improving data processing and analytics to provide valuable insights to LinkedIn users about their profiles and industry trends.
 
 ## Business Use Cases
 
@@ -190,5 +190,76 @@ B-Trees are well-suited for scenarios where efficient insertion, deletion, and r
 LinkedIn can maintain a stack data structure to store the most recent activities in chronological order, where the last activity added is the first one to be accessed.
 
 Implementing a LIFO stack for fast access to recent activities allows LinkedIn to deliver timely updates, notifications, and personalized recommendations to users. This approach supports dynamic content feeds, real-time analytics, and engagement metrics, ensuring that users receive relevant and up-to-date information tailored to their professional networking needs.
+
+* * *
+
+### 2. **Profile Search**
+
+**Algorithm:** Binary Search
+
+On LinkedIn, efficient profile search is crucial for both recruiters and users. The platform hosts millions of profiles, and quickly finding the right one can be challenging. Binary search offers a solution by enabling fast lookup in a sorted list of names.
+
+**Challenges:** With millions of profiles, a simple linear search would be inefficient and time-consuming, leading to poor user experience. Additionally, ensuring that the search results are accurate and relevant even as the database continues to grow, is another significant hurdle. The search algorithm must be capable of handling frequent updates and additions to the profile database without compromising on speed and accuracy.
+
+**Benefits:** Implementing binary search algorithm for profile searches on LinkedIn offers numerous market benefits. Binary search operates efficiently on sorted datasets, dramatically reducing the search time from O(n) in linear search to O(log n). This efficiency means that users can find the desired profiles almost instantaneously, enhancing their experience on the platform.
+
+**Complexity Analysis**
+
+Time Complexity: O(log n)
+
+Space Complexity: O(n)
+
+* * *
+
+### 3. **Job Recommendations**
+
+**Algorithm:** Heap Sort
+
+LinkedIn provides real-time job recommendations to its users, ensuring they have access to the most relevant job opportunities based on their profiles, search history and activity on the platform. This feature is crucial for both job seekers looking for new opportunities and employers seeking the best candidates.
+
+**Challenges:** The main challenge in delivering real-time job recommendations lies in processing large volumes of job postings and user data efficiently. LinkedIn must continuously analyze and rank millions of job postings to ensure that the most relevant ones are recommended to each user. Additionally, this process must be performed in real-time, meaning that any delays in updating job recommendations can result in missed opportunities for users. Ensuring the scalability of the recommendation system as the number of users and job postings grows is another significant challenge.
+
+**Benefits:** Heap sort is particularly efficient for real-time job recommendations because it is considered best at managing and retrieving the top K elements from a dataset. By maintaining a max-heap or min-heap of job postings based on relevance scores. LinkedIn can efficiently track and update the most relevant job postings as new data comes in. This method ensures that users always see the top job recommendations tailored to their profiles based on their relevence score.
+
+**Complexity Analysis**
+
+Time Complexity: The time complexity of heap sort is O(n log n), where n is the number of job postings.
+
+Space Complexity: The space complexity of heap sort is O(1) if the heap is built in place.
+
+* * *
+
+### 4. **Connection Suggestions**
+
+**Algorithm:** Breadth First Search (BFS)
+
+LinkedIn aims to enhance its user experience by providing connection suggestions to users. These suggestions often include second and third-degree connections, which are people that the user does not know directly but is connected to through mutual connections. 
+
+**Challenges:** The main challenge in providing accurate connection suggestions is efficiently navigating LinkedIn vast user network. With millions of users and billions of connections, the platform needs to identify potential connections quickly and accurately. The algorithm must handle dynamic and ever-growing data, ensuring real-time updates as users form new connections. 
+
+**Benefits:** Breadth First Search (BFS) is well-suited for this use case because it efficiently explores the shortest paths in an unweighted graph, such as LinkedIn's user network. By starting from a user's profile and performing a BFS, LinkedIn can quickly identify second and third-degree connections, which are typically the most relevant for connection suggestions. BFS ensures that all nodes at the current level of connection are explored before moving to the next level, guaranteeing that the shortest paths are found. This approach enhances user engagement by suggesting meaningful and relevant connections, encouraging users to expand their network.
+
+**Complexity Analysis**
+
+Time Complexity: The time complexity of BFS is O(V+E), where V is the number of vertices(users) and E is the number of edges(connections).
+
+Space Complexity: The space complexity of BFS is O(V), which is needed to store the queue and the visited nodes. 
+
+* * *
+
+### 5. **Similar Profile Suggestions**
+
+**Algorithm:** Rabin-Karp Algorithm
+
+LinkedIn aims to enhance user experience by detecting and suggesting similar profiles based on shared skills and experiences. This feature helps users discover like-minded professionals, potential mentors, or candidates with similar qualifications for networking or recruitment purposes.
+
+**Challenges:** The primary challenge in profile similarity detection is efficiently comparing a vast number of profiles. Each profile contains multiple sections, such as skills, work experiences, and education, which need to be analyzed for similarities. Handling this large volume of data in real-time requires a robust algorithm that can quickly and accurately identify matching substrings.
+
+**Benefits:** The Rabin-Karp algorithm is particularly effective for this use case due to its ability to efficiently find matching substrings within large datasets. By using hashing, Rabin-Karp can quickly compare sections of profiles, identifying similar skills and experiences with minimal computational overhead. This efficiency is crucial for real-time applications, allowing LinkedIn to provide immediate profile similarity suggestions as users update their profiles or as new users join the platform.
+
+**Complexity Analysis**
+
+Time Complexity: The average time complexity of Rabin-Karp for matching a pattern of length m within a text of length n is O(n + m). 
+Space Complexity: The space complexity of Rabin-Karp is O(m), where m is the length of the pattern. This is required to store the hash values and the pattern itself.
 
 * * *
