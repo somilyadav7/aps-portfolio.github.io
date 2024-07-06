@@ -72,127 +72,6 @@ Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the l
 [Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp)
 * * *
 
-### 2. **Missing Sections in a LinkedIn Profile**
-
-**Algorithm**: Set Difference
-
-LinkedIn profiles can be divided into different sections such as "Experience," "Skills," "Education," "Certifications," "Projects," and more. To help users enhance their profiles, it’s important to identify which of these recommended sections are currently missing. Using sets, we can represent the existing sections of a user profile and the recommended sections. By calculating the difference between these two sets, we can easily determine the missing sections.
-
-* * *
-
-### 3. **Common Skills Between Two Profiles**
-
-**Algorithm**: Longest Common Substring
-
-The "Longest Common Substring" algorithm can be effectively applied to identify common skills between two profiles on LinkedIn. In this context, each profile can be seen as a sequence of skills, and the algorithm is used to find the longest sequence of skills that appears in both profiles.
-
-* * *
-
-### 4. **Geographic Search for Networking Events**
-
-**Algorithm**: KD Tree
-
-LinkedIn users often seek networking opportunities such as events, conferences, or meetups relevant to their industry or interests. These events are often geographically dispersed, and users may want to find events near their location to maximize attendance and networking opportunities.
-
-Implementing a KD Tree for geographic search on LinkedIn enables efficient discovery of networking events based on proximity to a user's location. This enhances user engagement, fosters community interaction, and supports LinkedIn's mission to connect professionals globally through relevant and accessible networking opportunities.
-
-* * *
-
-### 5. **Efficient Profile Searches**
-
-**Algorithm**: B and B+ Tree
-
-LinkedIn users frequently search for profiles based on various criteria such as skills, industry, location, and experience level. Efficiently retrieving relevant profiles from a vast database while optimizing search performance is crucial to enhancing user experience and engagement.
-
-Implementing B and B+ Trees for profile searches on LinkedIn offers a robust solution to efficiently manage and retrieve profile data based on user-defined criteria. 
-- Data Representation: Each LinkedIn profile can be stored in a database where attributes such as skills, industry, location, and experience level are indexed using B or B+ Trees.
-- Indexing: Build B or B+ Trees on key attributes (e.g., skills, location) of profiles to allow efficient retrieval based on search criteria.
-- Search Operation: To find profiles matching specific criteria (e.g., skills = "Data Science" and location = "San Francisco"), use the B or B+ Tree to navigate directly to relevant profiles without scanning the entire dataset.
-
-* * *
-
-### 6. **Fast Skill Endorsements Search**
-
-**Algorithm**: Trie and Radix Tree
-
-LinkedIn users often endorse each other for various skills, contributing to the credibility and visibility of profiles. Efficiently managing and searching through a large volume of skill endorsements is crucial for enhancing user engagement and platform performance. Implementing a fast skill endorsements search functionality on LinkedIn using Trie and Radix Trees to enable quick retrieval and management of skill endorsements.
-
-- Data Structure Design: Designing and implementing a Trie or Radix Tree structure tailored for storing and retrieving skill endorsements efficiently.
-- Endorsement Management: Developing algorithms to insert new endorsements and update the tree structure dynamically as endorsements are added or removed.
-- Search Optimization: Implement search algorithms that leverage the Trie or Radix Tree's structure to rapidly locate and retrieve relevant skill endorsements.
-  
-* * *
-
-### 7. **Profile Recommendation Updates**
-
-**Algorithm**: Trie and Radix Tree
-
-LinkedIn frequently recommends profiles to users based on various factors such as shared connections, industry, skills, and activity levels. To enhance user engagement and relevance, LinkedIn needs to efficiently track and update the number of times each user's profile is recommended to others.
-
-The Fenwick/Binary Indexed Tree (BIT) is ideal for scenarios where frequent updates and queries of cumulative sums (in this case, the number of profile recommendations) are required. As LinkedIn recommends profiles dynamically based on user interactions and updates, the BIT can efficiently handle incremental updates and provide quick responses to queries about the total number of recommendations.
-
-* * *
-
-### 8. **Optimizing Skill Search**
-
-**Algorithm**: Suffix Trees
-
-LinkedIn facilitates efficient skill searches across user profiles by leveraging Suffix Trees, an advanced data structure renowned for rapid pattern matching and substring search capabilities. The platform's objective is to swiftly identify profiles that align with specific skill criteria, enhancing user engagement and networking opportunities.
-
-Suffix Trees excel in scenarios requiring rapid search and pattern matching within large datasets, making them ideal for LinkedIn's skill search optimization. Each profile's skills can be represented in the Suffix Tree, allowing LinkedIn to efficiently match search queries against these structured representations. This capability enables LinkedIn to deliver precise and immediate results to users seeking professionals with specific skill sets, thereby enhancing their ability to connect with relevant contacts and opportunities.
-
-* * *
-
-### 8. **Optimising Job Application History Retrieval**
-
-**Algorithm**: Skip Lists
-
-LinkedIn aims to streamline the retrieval of job application histories for users by employing Skip Lists, a data structure renowned for its efficiency in maintaining sorted lists and facilitating rapid access to sorted data. This optimization enhances user experience by providing quick and organized access to historical job application data.
-
-Skip Lists are well-suited for maintaining sorted lists where elements need to be quickly accessed in logarithmic time complexity. LinkedIn leverages Skip Lists to store and manage job application histories, ensuring that users can swiftly retrieve and review their past applications and activities. This efficiency is critical in providing users with seamless access to their career progression data, supporting informed decision-making and enhancing their engagement with LinkedIn's job-seeking features.
-
-* * *
-
-### 9. **Event Overlap Detection**
-
-**Algorithm**: Interval Trees
-
-LinkedIn enhances event management capabilities by implementing Interval Trees, a specialized data structure designed to efficiently manage and query overlapping time intervals for user events and meetings. This optimization allows LinkedIn users to seamlessly schedule and coordinate their professional engagements without conflicts.
-
-Interval Trees excel in scenarios where the efficient detection of overlapping time intervals is crucial. LinkedIn utilizes Interval Trees to store and organize event schedules, enabling rapid identification of conflicting or overlapping events. This capability ensures that users can effectively manage their time commitments, avoid scheduling conflicts, and optimize their participation in professional events and meetings.
-
-* * *
-
-### 10. **Optimizing Content Display Based on User Interaction**
-
-**Algorithm**: Lazy Propagation
-
-LinkedIn enhances the display of content by employing Lazy Propagation, an algorithm that efficiently updates content metrics based on user interactions. This approach optimizes user experience by ensuring that relevant and engaging content is prominently featured, thereby increasing user engagement and interaction on the platform.
-
-Lazy Propagation is particularly effective for scenarios where frequent updates to aggregate data (such as interaction metrics) are required. LinkedIn utilizes Lazy Propagation to defer updates until necessary, ensuring that computations are performed only when data is accessed or modified. This approach minimizes computational overhead and improves efficiency in managing and updating content display metrics based on user interactions.
-
-* * *
-
-### 11. **Efficiently Handling Large-Scale Profile Data**
-
-**Algorithm**: B-Trees
-
-LinkedIn optimizes the storage and retrieval of large-scale profile data using B-Trees, a balanced tree data structure renowned for its efficiency in managing and accessing large datasets. This approach ensures robust performance and scalability, supporting LinkedIn's vast user base and diverse profile information requirements.
-
-B-Trees are well-suited for scenarios where efficient insertion, deletion, and retrieval operations are essential, particularly in databases and file systems handling extensive volumes of data. LinkedIn leverages B-Trees to organize and store profile data effectively, ensuring quick access and updates across its platform. This capability is crucial for maintaining responsive user experiences and supporting complex queries associated with professional profiles and network interactions.
-
-* * *
-
-### 12. **Fast Access to Most Recent Activities**
-
-**Algorithm**: Last-In-First-Out (LIFO) Stack
-
-LinkedIn can maintain a stack data structure to store the most recent activities in chronological order, where the last activity added is the first one to be accessed.
-
-Implementing a LIFO stack for fast access to recent activities allows LinkedIn to deliver timely updates, notifications, and personalized recommendations to users. This approach supports dynamic content feeds, real-time analytics, and engagement metrics, ensuring that users receive relevant and up-to-date information tailored to their professional networking needs.
-
-* * *
-
 ### 2. **Profile Search**
 
 **Algorithm:** Binary Search
@@ -285,19 +164,19 @@ Space Complexity: The space complexity of Quick Sort is O(log n) for the in-plac
 
 ### 7. **Spam Content Detection**
 
-**Algorithm:** Bloom Filter
+**Algorithm:** Count-Min Sketch
 
-LinkedIn strives to maintain a professional and spam-free environment for its users. Detecting and preventing spam content is essential to ensure that users are presented with valuable and relevant information. Bloom filters can be utilized to quickly check whether a piece of content has previously been marked as spam, thereby preventing duplicate spam content from being posted and enhancing the overall user experience.
+LinkedIn employs robust measures to detect and prevent spam content, ensuring a professional and reliable user experience. The Count-Min Sketch algorithm is instrumental in swiftly identifying potential spam by efficiently tracking the frequency of content attributes, such as keywords or patterns, without storing the content itself. This method aids in swiftly recognizing and filtering out suspicious content before it reaches users' feeds, thereby maintaining the integrity of the platform.
 
-**Challenges:** One of the main challenges in spam content detection is efficiently handling the vast amount of user-generated content. LinkedIn must ensure that the spam detection system is both fast and memory-efficient, given the large scale of the platform. Handling false positives and ensuring that legitimate content is not mistakenly flagged as spam is another critical challenge. The solution must also scale effectively as the volume of content grows and the number of users increases.
+**Challenges:** Effectively managing the vast volume of user-generated content poses a primary challenge. LinkedIn must ensure the spam detection system operates swiftly and accurately amidst a high volume of data. Balancing false positives and negatives is critical, as misidentifying legitimate content as spam or vice versa can impact user trust and engagement. Furthermore, the system must scale seamlessly with LinkedIn's expanding user base and increasing content diversity.
 
-**Benefits:** Bloom filters are highly efficient for this use case due to their fast checking capabilities and low memory usage. A Bloom filter can quickly determine whether a piece of content has been marked as spam, allowing LinkedIn to prevent duplicate spam content from being posted almost instantaneously. Bloom filters also have a fixed memory size, making them scalable and manageable even as the amount of data grows. Although Bloom filters can produce false positives, they are unlikely to produce false negatives, ensuring that known spam content is consistently detected and blocked. 
+**Benefits:** The Count-Min Sketch algorithm offers several advantages tailored to LinkedIn's spam detection needs. It efficiently estimates the frequency of content attributes using a limited amount of memory, making it scalable even with extensive data volumes. By prioritizing rapid detection, the algorithm swiftly identifies potential spam, thus minimizing its impact on the user experience. Count-Min Sketch is adept at handling varying data distributions and can adapt to evolving spam patterns, ensuring consistent performance over time.
 
-**Complexity Analysis**
+**Complexity Analysis:**
 
-Time Complexity: The time complexity for insertion and membership checking in a Bloom filter is O(k), where k is the number of hash functions.
+- **Time Complexity:** The Count-Min Sketch algorithm performs insertions and queries in O(1) time for each operation. 
 
-Space Complexity: The space complexity of a Bloom filter is O(m), where m is the size of the bit array.
+- **Space Complexity:** The space complexity of the Count-Min Sketch algorithm is O(w * d), where w is the number of hash functions and d is the depth (number of counters per hash function). 
 
 * * *
 
@@ -319,7 +198,7 @@ Space Complexity: The space complexity of a trie is O(AL), where A is the size o
 
 * * *
 
-### 8. **Keyword Matching for Posts**
+### 9. **Keyword Matching for Posts**
 
 **Algorithm:** Z Algorithm
 
@@ -337,7 +216,7 @@ Space Complexity: The space complexity of the Z algorithm is O(n + m) to store t
 
 * * *
 
-### 9. **Group Recommendation**
+### 10. **Group Recommendation**
 
 **Algorithm:** Topological Sort Algorithm
 
@@ -355,7 +234,7 @@ Space Complexity: The space complexity of topological sort is O(V + E) to store 
 
 * * *
 
-### 10. **Trending Skills Identification**
+### 11. **Trending Skills Identification**
 
 **Algorithm:** Radix Sort
 
@@ -373,7 +252,7 @@ Space Complexity: The space complexity of Radix Sort is O(n + k), which is neede
 
 * * *
 
-### 11. **Fraudulent Account Detection**
+### 12. **Fraudulent Account Detection**
 
 **Algorithm:** Quick Select Algorithm
 
@@ -388,5 +267,244 @@ LinkedIn aims to enhance its security measures by identifying and prioritizing t
 Time Complexity: The average time complexity of Quick Select is O(n), where n is the number of accounts.
 
 Space Complexity: The space complexity of Quick Select is O(1) for the iterative version, making it space-efficient and suitable for large datasets.
+
+* * *
+
+### 13. **Sorting Messages and Notifications**
+
+**Algorithm:** Merge Sort
+
+LinkedIn needs to efficiently sort messages and notifications to enhance user experience by presenting the most relevant and timely information. Sorting can be based on various criteria such as timestamp, priority, or user-defined preferences.
+
+**Challenges:** The primary challenge in sorting messages and notifications is handling the large volume of data generated by LinkedIn users. The sorting algorithm must be efficient and scalable to process this data in real-time. Different sorting criteria, such as time received, importance, or user-defined preferences add to the complexity.
+
+**Benefits:** Merge Sort is an excellent choice for this use case due to its stable and efficient sorting capabilities. It has a time complexity of O(n log n) for both worst and average cases, making it reliable for large datasets. Merge Sort works by recursively dividing the data into smaller subarrays, sorting them, and then merging them back together. This divide-and-conquer approach ensures that the algorithm performs well even with large volumes of messages and notifications. Merge Sort is also stable, meaning it preserves the relative order of equal elements, which is important when sorting by multiple criteria.
+
+**Complexity Analysis**
+
+Time Complexity: Merge Sort has a time complexity of O(n log n) for all cases (worst, average, and best).
+
+Space Complexity: The space complexity of Merge Sort is O(n) due to the auxiliary space required for merging.
+
+* * *
+
+### 14. **Username and Password Matching During Login**
+
+**Algorithm:** Hashing and Binary Search
+
+When a user attempts to log in to LinkedIn, the system needs to efficiently verify the username and password against the stored credentials in the database. Hashing is used to securely store and compare passwords, while Binary Search can be used to quickly locate the username in a sorted list of user records.
+
+**Challenges:** The primary challenges in username and password matching include ensuring security, efficiency, and scalability. The system must protect user credentials against attacks such as brute force and dictionary attacks. It must also handle a large and growing user base efficiently, ensuring that login operations are fast and responsive.
+
+**Benefits:** Using hashing for password storage and Binary Search for username lookup provides a secure and efficient approach to login verification:
+- Security: Hashing passwords with a strong cryptographic hash function (e.g., bcrypt, Argon2) ensures that stored passwords are protected. Even if the database is compromised, the hashed passwords cannot be easily reversed to obtain the original passwords.
+- Efficiency: Binary Search allows for efficient username lookup in a sorted list, with a time complexity of O(log n), where n is the number of users. This ensures fast login operations, even for large user bases.
+  
+**Complexity Analysis**
+
+Time Complexity: Binary Search for username lookup has a time complexity of O(log n). Hashing and comparing the password typically have a constant time complexity O(1), as the hash function operates in fixed time.
+
+Space Complexity: The space complexity is primarily dependent on the storage of hashed passwords and user records, which is O(n), where n is the number of users.
+
+* * *
+
+### 15. **Calculating Resume ATS Score Using Specific Parameters**
+
+**Algorithm:** Trie Data Structure
+
+LinkedIn's ATS (Applicant Tracking System) score calculation aims to evaluate resumes based on specific parameters such as keywords, experience, education, and skills. A Trie data structure can be effectively used to store and match keywords and phrases from resumes, enabling quick and efficient scoring.
+
+**Challenges:** The primary challenges in calculating an ATS score include handling large volumes of resumes, accurately matching keywords and phrases, and ensuring that the scoring algorithm is efficient and scalable. The system must process resumes quickly and provide meaningful scores based on predefined criteria
+
+**Benefits:** Using a Trie data structure offers several advantages for this use case:
+- Efficiency: Tries allow for fast insertion and search operations, making them ideal for matching keywords and phrases in resumes.
+- Scalability: Tries can handle a large number of keywords and phrases, ensuring scalability as the database of resumes grows.
+- Precision: Tries provide exact matches for keywords and phrases, improving the accuracy of the ATS scoring system.
+
+**Complexity Analysis**
+
+Time Complexity: Merge Sort has a time complexity of O(n log n) for all cases (worst, average, and best).
+
+Space Complexity: The space complexity of Merge Sort is O(n) due to the auxiliary space required for merging.
+
+* * *
+
+### 16. **Handling "Not Interested" Selection on Posts or Ads**
+
+**Algorithm:** Hash Table (HashMap)
+
+LinkedIn allows users to mark posts or ads as "not interested," aiming to personalize content by excluding unwanted items from their feed. A Hash Table (HashMap) can efficiently manage and retrieve these preferences, ensuring that marked posts or ads are appropriately filtered out.
+
+**Challenges:** The primary challenges in managing "not interested" selections include ensuring fast retrieval of user preferences, scalability to handle a large number of users and posts, and minimizing memory usage while maintaining efficient operations. The system must also handle concurrent updates and provide real-time feedback to users without compromising performance.
+
+**Benefits:** Using a Hash Table (HashMap) offers several advantages for this use case:
+- Fast Retrieval: Hash Tables provide O(1) average-time complexity for insertions, deletions, and lookups, making them ideal for quick retrieval of user preferences.
+- Memory Efficiency: Hash Tables use a fixed amount of memory proportional to the number of entries, optimizing memory usage compared to data structures like trees.
+- Scalability: Hash Tables can scale with LinkedIn’s growing user base and content volume, ensuring that the system remains responsive and efficient over time.
+
+**Complexity Analysis**
+
+Time Complexity: Insertion, deletion, and lookup operations in a Hash Table have an average time complexity of O(1). In rare cases, these operations can degrade to O(n).
+
+Space Complexity: The space complexity of a Hash Table is O(n), where n is the number of entries (user IDs with associated sets of "not interested" item IDs).
+
+* * *
+
+### 17. **Enhancing Content Display Based on User Interest**
+
+**Algorithm:** Priority Queue (Heap)
+
+LinkedIn aims to increase user engagement by recommending more content similar to posts that users have shown interest in (e.g., clicked "interested"). A Priority Queue, implemented with a Heap data structure, can efficiently manage and retrieve posts based on their relevance scores, ensuring that the most relevant and engaging content is prioritized.
+
+**Challenges:** The primary challenges in recommending content based on user interest include dynamically updating content rankings, handling a large volume of user interactions, and ensuring that recommendations remain relevant and diverse. The system must also balance between popular content and introducing new content to maintain user interest.
+
+**Benefits:** Using a Priority Queue (Heap) offers several advantages for this use case:
+- Efficiency: Heaps allow for efficient insertion and extraction of the highest-priority elements (in this case, posts with higher user interest scores), with operations typically performed in O(log n) time.
+- Dynamic Updates: The Priority Queue can dynamically adjust to changes in user interactions, ensuring that recently popular posts are prioritized.
+- Scalability: Heaps can scale with LinkedIn’s growing user base and content volume, maintaining fast and responsive operations for content recommendation.
+
+**Complexity Analysis**
+
+Time Complexity: Insertion and extraction operations in a Max-Heap have a time complexity of O(log n), where n is the number of elements (posts) in the heap.
+
+Space Complexity: The space complexity of a Heap is O(n), where n is the number of posts stored in the Priority Queue.
+
+* * *
+
+### 18. **Spam Content Detection**
+
+**Algorithm:** Count-Min Sketch
+
+LinkedIn employs robust measures to detect and prevent spam content, ensuring a professional and reliable user experience. The Count-Min Sketch algorithm is instrumental in swiftly identifying potential spam by efficiently tracking the frequency of content attributes, such as keywords or patterns, without storing the content itself. This method aids in swiftly recognizing and filtering out suspicious content before it reaches users' feeds, thereby maintaining the integrity of the platform.
+
+**Challenges:** Effectively managing the vast volume of user-generated content poses a primary challenge. LinkedIn must ensure the spam detection system operates swiftly and accurately amidst a high volume of data. Balancing false positives and negatives is critical, as misidentifying legitimate content as spam or vice versa can impact user trust and engagement.
+
+**Benefits:** The Count-Min Sketch algorithm offers several advantages tailored to LinkedIn's spam detection needs. It efficiently estimates the frequency of content attributes using a limited amount of memory, making it scalable even with extensive data volumes. By prioritizing rapid detection, the algorithm swiftly identifies potential spam, thus minimizing its impact on the user experience.
+
+**Complexity Analysis**
+
+Time Complexity: The Count-Min Sketch algorithm performs insertions and queries in O(1) time for each operation.
+
+Space Complexity: The space complexity of the Count-Min Sketch algorithm is O(w * d), where w is the number of hash functions and d is the depth (number of counters per hash function). 
+
+* * *
+
+### 18. **Image and Video Compression**
+
+**Algorithm:** Huffman Coding
+
+Huffman coding, a widely used entropy encoding algorithm, is adept at achieving significant compression ratios by assigning shorter codes to more frequent symbols or data segments. This approach proves particularly effective in compressing images and videos, where reducing redundancy in pixel values or frames can lead to substantial savings in storage or transmission bandwidth.
+
+**Challenges:** The primary challenges in image and video compression include balancing compression ratio with computational complexity and ensuring that decompression does not degrade visual fidelity. Huffman coding must efficiently handle diverse data distributions within images and videos, ranging from uniform pixel values to complex visual patterns across frames.
+
+**Benefits:** Huffman coding offers several advantages for image and video compression:
+- High Compression Ratios: By assigning shorter codes to frequently occurring symbols (e.g., pixel values or frame patterns), Huffman coding effectively reduces the overall size of image and video files.
+- Adaptability: The algorithm adapts to varying data distributions, optimizing compression based on the specific content being encoded.
+- Decompression Efficiency: Decompressing Huffman-encoded data remains computationally feasible, ensuring rapid access to compressed media for viewing or editing.
+
+**Complexity Analysis**
+
+Time Complexity: The Huffman tree and encoding/decoding operations typically operate in O(n log n) time complexity, where n represents the number of symbols or data segments being processed.
+
+Space Complexity: The space overhead in Huffman coding is O(n) space, where n is the number of unique symbols or data segments.
+
+* * *
+
+### 19. **Securing User Data**
+
+**Algorithm:** Huffman Coding
+
+In the realm of data security, ensuring the integrity and confidentiality of user information is paramount. SHA-256 (Secure Hash Algorithm 256-bit) stands as a cornerstone cryptographic hash function, widely employed to safeguard sensitive data through its robust hashing properties. In LinkedIn, handling user information, utilizes SHA-256 to hash passwords and verify data integrity, enhancing protection against unauthorized access and data tampering
+
+**Challenges:** The primary challenges in securing user data include maintaining computational efficiency while upholding cryptographic strength and ensuring compatibility across various software and hardware environments. LinkedIn must implement SHA-256 in a manner that safeguards user passwords and critical information against brute-force attacks and cryptographic vulnerabilities.
+
+**Benefits:** SHA-256 offers several advantages for securing user data:
+- Cryptographic Strength: SHA-256 produces a fixed-size 256-bit hash value, resistant to collision attacks due to its one-way hashing nature.
+- Data Integrity: By generating unique hash values for input data, SHA-256 ensures that even minor changes in input produce vastly different output hashes, facilitating data integrity verification.
+- Widespread Adoption: SHA-256 enjoys broad acceptance and implementation across software and hardware platforms, ensuring interoperability and consistent security practices.
+
+**Complexity Analysis**
+
+Time Complexity: O(n) time, where n is the size of the input data. 
+
+Space Complexity: O(1), fixed size output regardless of input.
+
+* * *
+
+### 20. **Autocomplete Search**
+
+**Algorithm:** Trie Data Structure
+
+Autocomplete search functionality enhances user experience by predicting and suggesting search queries based on partial input. LinkedIn employs trie data structures to efficiently implement autocomplete features, providing real-time suggestions as users type their queries. This approach optimizes search performance by quickly narrowing down possible matches from a large dataset of user profiles, job postings, and content.
+
+**Challenges:** Implementing autocomplete search involves efficiently handling and updating trie structures to reflect dynamic changes in user data. LinkedIn must balance between memory usage and search performance to deliver responsive autocomplete suggestions. Additionally, ensuring accuracy and relevance in suggested results amidst varying user search behaviors presents a significant challenge.
+
+**Benefits:** Using trie data structures for autocomplete search offers several advantages:
+- Efficient Prefix Matching: Tries allow rapid prefix matching by traversing nodes corresponding to input characters, enabling quick identification of potential completions.
+- Space Optimization: Trie structures optimize memory usage by storing shared prefixes once, minimizing redundancy in storing similar search terms.
+- Real-time Suggestions: Trie traversal facilitates real-time generation of autocomplete suggestions as users input characters, enhancing search usability and efficiency.
+  
+**Complexity Analysis**
+
+Time Complexity: Trie operations, including insertion, deletion, and search, typically operate in O(m) time complexity, where m is the length of the search term.
+
+Space Complexity: Tries consume space proportional to the number of unique search terms and the average length of these terms.
+
+* * *
+
+### 21. **Missing Sections in a LinkedIn Profile**
+
+**Algorithm**: Set Difference
+
+LinkedIn profiles can be divided into different sections such as "Experience," "Skills," "Education," "Certifications," "Projects," and more. To help users enhance their profiles, it’s important to identify which of these recommended sections are currently missing. Using sets, we can represent the existing sections of a user profile and the recommended sections. By calculating the difference between these two sets, we can easily determine the missing sections.
+
+* * *
+
+### 22. **Common Skills Between Two Profiles**
+
+**Algorithm**: Longest Common Substring
+
+The "Longest Common Substring" algorithm can be effectively applied to identify common skills between two profiles on LinkedIn. In this context, each profile can be seen as a sequence of skills, and the algorithm is used to find the longest sequence of skills that appears in both profiles.
+
+* * *
+
+### 23. **Geographic Search for Networking Events**
+
+**Algorithm**: KD Tree
+
+LinkedIn users often seek networking opportunities such as events, conferences, or meetups relevant to their industry or interests. These events are often geographically dispersed, and users may want to find events near their location to maximize attendance and networking opportunities.
+
+Implementing a KD Tree for geographic search on LinkedIn enables efficient discovery of networking events based on proximity to a user's location. This enhances user engagement, fosters community interaction, and supports LinkedIn's mission to connect professionals globally through relevant and accessible networking opportunities.
+
+* * *
+
+
+### 24. **Optimizing Content Display Based on User Interaction**
+
+**Algorithm**: Lazy Propagation
+
+LinkedIn enhances the display of content by employing Lazy Propagation, an algorithm that efficiently updates content metrics based on user interactions. This approach optimizes user experience by ensuring that relevant and engaging content is prominently featured, thereby increasing user engagement and interaction on the platform.
+
+Lazy Propagation is particularly effective for scenarios where frequent updates to aggregate data (such as interaction metrics) are required. LinkedIn utilizes Lazy Propagation to defer updates until necessary, ensuring that computations are performed only when data is accessed or modified. This approach minimizes computational overhead and improves efficiency in managing and updating content display metrics based on user interactions.
+
+* * *
+
+### 25. **Efficiently Handling Large-Scale Profile Data**
+
+**Algorithm**: B-Trees
+
+LinkedIn optimizes the storage and retrieval of large-scale profile data using B-Trees, a balanced tree data structure renowned for its efficiency in managing and accessing large datasets. This approach ensures robust performance and scalability, supporting LinkedIn's vast user base and diverse profile information requirements.
+
+B-Trees are well-suited for scenarios where efficient insertion, deletion, and retrieval operations are essential, particularly in databases and file systems handling extensive volumes of data. LinkedIn leverages B-Trees to organize and store profile data effectively, ensuring quick access and updates across its platform. This capability is crucial for maintaining responsive user experiences and supporting complex queries associated with professional profiles and network interactions.
+
+* * *
+
+### 26. **Fast Access to Most Recent Activities**
+
+**Algorithm**: Last-In-First-Out (LIFO) Stack
+
+LinkedIn can maintain a stack data structure to store the most recent activities in chronological order, where the last activity added is the first one to be accessed.
+
+Implementing a LIFO stack for fast access to recent activities allows LinkedIn to deliver timely updates, notifications, and personalized recommendations to users. This approach supports dynamic content feeds, real-time analytics, and engagement metrics, ensuring that users receive relevant and up-to-date information tailored to their professional networking needs.
 
 * * *
