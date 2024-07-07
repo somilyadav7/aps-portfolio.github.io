@@ -1,3 +1,5 @@
+# Portfolio - LinkedIn
+
 <dl>
 <dt>Course Name</dt>
 <dd>Algorithmic Problem Solving</dd>
@@ -10,7 +12,10 @@
 <dt>Course Instructor</dt>
 <dd>Prakash Hegade</dd>  
 <dt>Portfolio Domain</dt>
-<dd>LinkedIn</dd>
+<dd>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="20" height="20">
+    LinkedIn
+</dd>
 
 </dl>
 
@@ -20,27 +25,30 @@
 #### Note:
 This page hosts:
 
-1. [Introduction](#introduction)
-2. [Need of Portfolio](#need-of-portfolio)
-3. [Design](#design)
-4. [Objectives](#objectives)
-5. [Business Use Cases](#business-use-cases)
+1. [🌟 Introduction](#introduction)
+2. [💼 Need of Portfolio](#need-of-portfolio)
+3. [🗄️ Design](#design)
+4. [🎯 Objectives](#objectives)
+5. [📊 Business Use Cases](#business-use-cases)
+6. [📚 Learning Outcomes](#learning-outcomes)
+7. [📑 References](#references)
 
 * * *
 **Enhancing LinkedIn Services through Data Structures and Algorithms**
 * * *
 
-## Introduction
+## 🌟 Introduction 
 
-  LinkedIn is a social network for the business community. Founded in 2002, the site is a place for professionals to connect with past and current colleagues, increase business connections, network within their industry, discuss business ideas, search for jobs and look for new hires. This portfolio project explores how applying data structures and algorithms can significantly enhance LinkedIn efficiency and effectiveness, drawing on the theoretical knowledge and practical skills from Algorithmic Problem Solving (APS) course.
+  LinkedIn is a platform designed for professionals to connect and network within the business community. Established in 2002, the platform serves as a hub for professionals to engage with former and current coworkers, expand their professional network, collaborate within their field, exchange business concepts, explore job opportunities, and recruit potential employees. This project's portfolio delves into how utilizing data structures and algorithms can greatly improve the efficiency and effectiveness of LinkedIn, utilizing skills and knowledge from the Algorithmic Problem Solving (APS) course.
 
-By optimizing recommendation systems for improved relevance, refining search algorithms for better accuracy and speed, and addressing other core functionalities, this portfolio demonstrates the vast potential for enhancement of LinkedIn. Each use case bridges the gap between theory and practical application, showcasing how advanced algorithms can solve real-world business challenges and improving LinkedIn performance, reliability and efficiency.
+This portfolio showcases how LinkedIn can be significantly improved by enhancing recommendation systems, refining search algorithms, and addressing other key functionalities. Every scenario connects theory to real-world business problems, demonstrating how advanced algorithms can enhance LinkedIn's performance, reliability, and efficiency.
 
-## Need of Portfolio
+## 💼 Need of Portfolio
 
-  A portfolio focused on LinkedIn is necessary because it addresses the complex challenges of optimizing a professional networking platform through the application of data structures and algorithms (DSA). Enhancing functionalities such as search algorithms, recommendation systems and network analysis can significantly improve user engagement and satisfaction. By applying theoretical knowledge from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to real-world scenarios, this portfolio bridges the gap between academic learning and practical implementation. It not only showcases the ability to solve real-world problems but also demonstrates a commitment to improving the efficiency and effectiveness of LinkedIn services, making it an invaluable resource for professional development and innovation in the tech industry.
+  An important portfolio that targets LinkedIn is needed to handle the difficult task of improving a professional networking platform by using data structures and algorithms (DSA). Improving features like search algorithms, recommendation systems and network analysis can greatly enhance user interaction and contentment. This portfolio connects academic learning with practical implementation by using theoretical knowledge from DSA and APS courses in real-world situations. It demonstrates not just the capability to address practical issues but also shows dedication to enhancing the efficiency and effectiveness of LinkedIn services, making it a valuable resource for professional growth and innovation in the tech sector.
 
-## Design
+## 🗄️ Design
+
   LinkedIn has over 930 million users in 200 countries. At peak load, the site is serving nearly 5 million user profile pages a second (a user’s profile page lists things like their job history, skills, recommendations, cringy influencer posts, etc.)
 
 The workload is extremely read-heavy, where 99% of requests are reads and less than 1% are writes (you probably spend a lot more time stalking on LinkedIn versus updating your profile).
@@ -84,9 +92,9 @@ In order to minimize the amount of traffic that gets directed to Espresso, Linke
 - All-time Cached Data Availability
 - Strictly defined SLO on data divergence
 
-LinkedIn followed the idea: keep it simple. And changed their architecture based on needs. They remain the biggest network for Professionals in 2024.
+LinkedIn's scalable caching architecture, combining Espresso and Couchbase, efficiently serves millions of users. This design ensures high availability, resilience, and rapid data access while maintaining strict consistency standards.
 
-## Objectives
+## 🎯 Objectives
 
 **1.** Applying theoretical concepts from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to practical, real-world problems within the LinkedIn platform.
 
@@ -98,15 +106,24 @@ LinkedIn followed the idea: keep it simple. And changed their architecture based
 
 **5.** Improving data processing and analytics to provide valuable insights to LinkedIn users about their profiles and industry trends.
 
-## Business Use Cases
+## 📊 Business Use Cases
 
 ### 1. **Profile Matching for Job Fit**
 
 **Algorithm**: Longest Common Subsequence
 
-The Longest Common Subsequence (LCS) algorithm can be effectively utilized in LinkedIn profile matching for job fit. The LCS algorithm helps identify the most relevant job matches for a user profile by comparing the sequences of skills, experiences, and qualifications listed in both job descriptions and user profiles. By treating job descriptions and user profiles as sequences of keywords(skills, job titles, companies, etc.). The LCS algorithm finds the longest subsequence common to both. This subsequence represents the overlapping skills that are necessary for the job position.
+**Use Case:**
+Recruiters on LinkedIn use the LCS algorithm to enhance job matching accuracy between job descriptions and user profiles. This algorithm identifies the longest sequence of overlapping skills, experiences, and qualifications shared between a job description and a candidate's profile. By focusing on these common elements, recruiters can better assess candidate suitability and recommend relevant job opportunities.
 
-For example, consider a job description that lists skills such as "Java", "Project Management", "Agile", and "Team Leadership." A user's profile have "Python", "Java", "Agile", "Software Development", and "Team Leadership." The LCS algorithm will identify "Java", "Agile", and "Team Leadership" as the common subsequence. The length and content of this common subsequence provide a measure of how well the user's profile matches the job requirements. Profiles with longer common subsequences are deemed more suitable, enabling LinkedIn to prioritize and recommend jobs that closely align with a user's skills and experiences.
+**Challenges:**
+- Data Variability: Variations in how skills and qualifications are described in profiles and job descriptions can complicate accurate matching.
+- Scalability: Handling large volumes of profiles and job listings efficiently, ensuring quick and accurate matching without performance degradation.
+- Relevance: Ensuring that identified common subsequences truly reflect essential job qualifications to avoid mismatches.
+
+Benefits:
+- Precision Matching: LCS enhances job recommendation accuracy by pinpointing the most pertinent skills and experiences shared between profiles and job requirements.
+- Flexibility in Matching: It accommodates non-contiguous matches, meaning skills and experiences can be matched even if they appear in different orders or with additional context in either profiles or job descriptions.
+- Relevance Focus: Identifying the longest sequence of relevant skills ensures that job recommendations closely align with the candidate's capabilities and the employer's needs.
 
 **Complexity Analysis**
 
@@ -117,39 +134,51 @@ Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the l
 [Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp)
 * * *
 
-### 2. **Profile Search**
+### 2. **Profile Search with Auto Suggestion**
 
-**Algorithm:** Binary Search
+**Algorithm:** Trie Data Structure with Autocomplete Feature
 
-On LinkedIn, efficient profile search is crucial for both recruiters and users. The platform hosts millions of profiles, and quickly finding the right one can be challenging. Binary search offers a solution by enabling fast lookup in a sorted list of names.
+**Use Case:** LinkedIn's profile search functionality enables users to quickly find other professionals by typing in names, job titles, skills, or other relevant keywords. Utilizing a trie data structure allows for efficient and fast search capabilities, providing real-time autocomplete suggestions as users input their queries.
 
-**Challenges:** With millions of profiles, a simple linear search would be inefficient and time-consuming, leading to poor user experience. Additionally, ensuring that the search results are accurate and relevant even as the database continues to grow, is another significant hurdle. The search algorithm must be capable of handling frequent updates and additions to the profile database without compromising on speed and accuracy.
+**Challenges:** 
+- Data Volume: LinkedIn must handle a vast and ever-growing dataset of user profiles, requiring a solution that can efficiently manage and search through large volumes of data.
+- Search Speed: Providing fast and accurate search results is crucial for user satisfaction, demanding an algorithm that can quickly process user input and deliver relevant suggestions.
+- Dynamic Updates: The system must be able to handle frequent updates to the dataset as new profiles are created and existing ones are modified.
 
-**Benefits:** Implementing binary search algorithm for profile searches on LinkedIn offers numerous market benefits. Binary search operates efficiently on sorted datasets, dramatically reducing the search time from O(n) in linear search to O(log n). This efficiency means that users can find the desired profiles almost instantaneously, enhancing their experience on the platform.
+**Benefits:** 
+- Efficient Prefix Matching: The trie data structure is optimized for prefix matching, allowing LinkedIn to quickly identify and suggest profiles that match the input query as users type.
+- Scalability: Tries can efficiently manage large datasets, making them suitable for LinkedIn’s extensive database of user profiles.
+- Dynamic Search Capabilities: Tries support dynamic updates, ensuring that new profiles and changes to existing profiles are reflected in search results in real-time.
+- Autocomplete Suggestions: By traversing the trie, LinkedIn can provide real-time autocomplete suggestions, enhancing user experience by making it easier and faster to find relevant profiles.
 
 **Complexity Analysis**
 
-Time Complexity: O(log n)
+Time Complexity: O(N*L) where N is the number of words in the trie and L is the length of the longest word in the trie.
 
-Space Complexity: O(n)
+Space Complexity:  O(N*L+N * ALPHABET_SIZE)
 
 * * *
 
-### 3. **Job Recommendations**
+### 3. **Job Recommendations for Users**
 
 **Algorithm:** Heap Sort
 
 LinkedIn provides real-time job recommendations to its users, ensuring they have access to the most relevant job opportunities based on their profiles, search history and activity on the platform. This feature is crucial for both job seekers looking for new opportunities and employers seeking the best candidates.
 
-**Challenges:** The main challenge in delivering real-time job recommendations lies in processing large volumes of job postings and user data efficiently. LinkedIn must continuously analyze and rank millions of job postings to ensure that the most relevant ones are recommended to each user. Additionally, this process must be performed in real-time, meaning that any delays in updating job recommendations can result in missed opportunities for users. Ensuring the scalability of the recommendation system as the number of users and job postings grows is another significant challenge.
+**Challenges:** 
+- The main challenge in delivering real-time job recommendations lies in processing large volumes of job postings and user data efficiently.
+- LinkedIn must continuously analyze and rank millions of job postings to ensure that the most relevant ones are recommended to each user.
 
-**Benefits:** Heap sort is particularly efficient for real-time job recommendations because it is considered best at managing and retrieving the top K elements from a dataset. By maintaining a max-heap or min-heap of job postings based on relevance scores. LinkedIn can efficiently track and update the most relevant job postings as new data comes in. This method ensures that users always see the top job recommendations tailored to their profiles based on their relevence score.
+**Benefits:** 
+- Heap Construction: LinkedIn constructs a max-heap data structure where job postings are prioritized based on relevance scores or other criteria.
+- Efficient Retrieval: The heap data structure facilitates quick retrieval of top K job recommendations based on predefined relevance metrics.
+- Real-time Updates: LinkedIn dynamically updates the heap structure as new job postings are added or user preferences change, ensuring recommendations reflect the latest opportunities.
 
 **Complexity Analysis**
 
-Time Complexity: The time complexity of heap sort is O(n log n), where n is the number of job postings.
+Time Complexity: The time complexity of heap sort is O(nlogn), where n is the number of job postings.
 
-Space Complexity: The space complexity of heap sort is O(1) if the heap is built in place.
+Space Complexity: O(log n), due to the recursive call stack. However, auxiliary space can be O(1) for iterative implementation.
 
 * * *
 
@@ -161,7 +190,10 @@ LinkedIn aims to enhance its user experience by providing connection suggestions
 
 **Challenges:** The main challenge in providing accurate connection suggestions is efficiently navigating LinkedIn vast user network. With millions of users and billions of connections, the platform needs to identify potential connections quickly and accurately. The algorithm must handle dynamic and ever-growing data, ensuring real-time updates as users form new connections. 
 
-**Benefits:** Breadth First Search (BFS) is well-suited for this use case because it efficiently explores the shortest paths in an unweighted graph, such as LinkedIn's user network. By starting from a user's profile and performing a BFS, LinkedIn can quickly identify second and third-degree connections, which are typically the most relevant for connection suggestions. BFS ensures that all nodes at the current level of connection are explored before moving to the next level, guaranteeing that the shortest paths are found. This approach enhances user engagement by suggesting meaningful and relevant connections, encouraging users to expand their network.
+**Benefits:** 
+- Breadth First Search (BFS) is well-suited for this use case because it efficiently explores the shortest paths in an unweighted graph, such as LinkedIn's user network.
+- By starting from a user's profile and performing a BFS, LinkedIn can quickly identify second and third-degree connections, which are typically the most relevant for connection suggestions.
+- BFS ensures that all nodes at the current level of connection are explored before moving to the next level, guaranteeing that the shortest paths are found. 
 
 **Complexity Analysis**
 
@@ -201,7 +233,7 @@ LinkedIn aims to keep users engaged by displaying the most popular and engaging 
 
 **Complexity Analysis**
 
-Time Complexity: The average time complexity of Quick Sort is O(n log n), where n is the number of posts or articles. 
+Time Complexity: The average time complexity of Quick Sort is O(nlogn), where n is the number of posts or articles. 
 
 Space Complexity: The space complexity of Quick Sort is O(log n) for the in-place version, which is needed for the recursion stack.
 
@@ -209,19 +241,25 @@ Space Complexity: The space complexity of Quick Sort is O(log n) for the in-plac
 
 ### 7. **Spam Content Detection**
 
-**Algorithm:** Count-Min Sketch
+**Algorithm:** Aho-Corasick Algorithm
 
-LinkedIn employs robust measures to detect and prevent spam content, ensuring a professional and reliable user experience. The Count-Min Sketch algorithm is instrumental in swiftly identifying potential spam by efficiently tracking the frequency of content attributes, such as keywords or patterns, without storing the content itself. This method aids in swiftly recognizing and filtering out suspicious content before it reaches users' feeds, thereby maintaining the integrity of the platform.
+LinkedIn needs to efficiently detect and prevent spam content to maintain a professional and valuable user experience. Using the Trie data structure combined with the Aho-Corasick algorithm allows LinkedIn to quickly and accurately identify spam content by matching patterns against a predefined set of spam indicators.
 
-**Challenges:** Effectively managing the vast volume of user-generated content poses a primary challenge. LinkedIn must ensure the spam detection system operates swiftly and accurately amidst a high volume of data. Balancing false positives and negatives is critical, as misidentifying legitimate content as spam or vice versa can impact user trust and engagement. Furthermore, the system must scale seamlessly with LinkedIn's expanding user base and increasing content diversity.
+**Challenges:** 
+- Volume of Content: Managing and scanning the vast amount of user-generated content efficiently.
+- False Positives/Negatives: Ensuring the accuracy of spam detection to avoid blocking legitimate content or missing spam.
+- Scalability: Maintaining performance and accuracy as the platform grows and the volume of content increases.
 
-**Benefits:** The Count-Min Sketch algorithm offers several advantages tailored to LinkedIn's spam detection needs. It efficiently estimates the frequency of content attributes using a limited amount of memory, making it scalable even with extensive data volumes. By prioritizing rapid detection, the algorithm swiftly identifies potential spam, thus minimizing its impact on the user experience. Count-Min Sketch is adept at handling varying data distributions and can adapt to evolving spam patterns, ensuring consistent performance over time.
+**Benefits:** 
+- Efficient Pattern Matching: The Aho-Corasick algorithm, built on a Trie, enables fast and simultaneous multi-pattern matching, allowing LinkedIn to scan for multiple spam patterns in a single pass. This efficiency is crucial for handling large datasets.
+- Low Memory Usage: The Trie structure efficiently stores and manages the spam patterns, ensuring that the algorithm uses memory proportional to the number of patterns and their lengths. This makes it scalable as the list of spam patterns grows.
+- Ease of Update: Adding new spam patterns to the Trie is straightforward, ensuring that LinkedIn can adapt to emerging spam tactics quickly and without significant overhead.
 
 **Complexity Analysis:**
 
-- **Time Complexity:** The Count-Min Sketch algorithm performs insertions and queries in O(1) time for each operation. 
-
-- **Space Complexity:** The space complexity of the Count-Min Sketch algorithm is O(w * d), where w is the number of hash functions and d is the depth (number of counters per hash function). 
+- **Time Complexity:** O(n + l + z), where ‘n’ is the length of the text, ‘l’ is the length of keywords, and ‘z’ is the number of matches.
+  
+- **Space Complexity:** O(l * q), where ‘q’ is the length of the alphabet since that is the maximum number of children a node can have.
 
 * * *
 
