@@ -369,25 +369,6 @@ Time Complexity: Merge Sort has a time complexity of O(n log n) for all cases (w
 
 Space Complexity: The space complexity of Merge Sort is O(n) due to the auxiliary space required for merging.
 
-* * *
-
-### 14. **Username and Password Matching During Login**
-
-**Algorithm:** Hashing and Binary Search
-
-When a user attempts to log in to LinkedIn, the system needs to efficiently verify the username and password against the stored credentials in the database. Hashing is used to securely store and compare passwords, while Binary Search can be used to quickly locate the username in a sorted list of user records.
-
-**Challenges:** The primary challenges in username and password matching include ensuring security, efficiency, and scalability. The system must protect user credentials against attacks such as brute force and dictionary attacks. It must also handle a large and growing user base efficiently, ensuring that login operations are fast and responsive.
-
-**Benefits:** Using hashing for password storage and Binary Search for username lookup provides a secure and efficient approach to login verification:
-- Security: Hashing passwords with a strong cryptographic hash function (e.g., bcrypt, Argon2) ensures that stored passwords are protected. Even if the database is compromised, the hashed passwords cannot be easily reversed to obtain the original passwords.
-- Efficiency: Binary Search allows for efficient username lookup in a sorted list, with a time complexity of O(log n), where n is the number of users. This ensures fast login operations, even for large user bases.
-  
-**Complexity Analysis**
-
-Time Complexity: Binary Search for username lookup has a time complexity of O(log n). Hashing and comparing the password typically have a constant time complexity O(1), as the hash function operates in fixed time.
-
-Space Complexity: The space complexity is primarily dependent on the storage of hashed passwords and user records, which is O(n), where n is the number of users.
 
 * * *
 
@@ -406,9 +387,9 @@ LinkedIn's ATS (Applicant Tracking System) score calculation aims to evaluate re
 
 **Complexity Analysis**
 
-Time Complexity: Merge Sort has a time complexity of O(n log n) for all cases (worst, average, and best).
+Time Complexity: O(NL) for calculating ATS score, where N is the number of words in the resume and L is the average length of words.
 
-Space Complexity: The space complexity of Merge Sort is O(n) due to the auxiliary space required for merging.
+Space Complexity: O(ML+NL), where M is the number of unique keywords in the Trie, L is the average length of words in the Trie, and N is the number of words in the resume.
 
 * * *
 
@@ -454,23 +435,6 @@ Space Complexity: The space complexity of a Heap is O(n), where n is the number 
 
 * * *
 
-### 18. **Spam Content Detection**
-
-**Algorithm:** Count-Min Sketch
-
-LinkedIn employs robust measures to detect and prevent spam content, ensuring a professional and reliable user experience. The Count-Min Sketch algorithm is instrumental in swiftly identifying potential spam by efficiently tracking the frequency of content attributes, such as keywords or patterns, without storing the content itself. This method aids in swiftly recognizing and filtering out suspicious content before it reaches users' feeds, thereby maintaining the integrity of the platform.
-
-**Challenges:** Effectively managing the vast volume of user-generated content poses a primary challenge. LinkedIn must ensure the spam detection system operates swiftly and accurately amidst a high volume of data. Balancing false positives and negatives is critical, as misidentifying legitimate content as spam or vice versa can impact user trust and engagement.
-
-**Benefits:** The Count-Min Sketch algorithm offers several advantages tailored to LinkedIn's spam detection needs. It efficiently estimates the frequency of content attributes using a limited amount of memory, making it scalable even with extensive data volumes. By prioritizing rapid detection, the algorithm swiftly identifies potential spam, thus minimizing its impact on the user experience.
-
-**Complexity Analysis**
-
-Time Complexity: The Count-Min Sketch algorithm performs insertions and queries in O(1) time for each operation.
-
-Space Complexity: The space complexity of the Count-Min Sketch algorithm is O(w * d), where w is the number of hash functions and d is the depth (number of counters per hash function). 
-
-* * *
 
 ### 18. **Image and Video Compression**
 
@@ -514,26 +478,7 @@ Space Complexity: O(1), fixed size output regardless of input.
 
 * * *
 
-### 20. **Autocomplete Search**
 
-**Algorithm:** Trie Data Structure
-
-Autocomplete search functionality enhances user experience by predicting and suggesting search queries based on partial input. LinkedIn employs trie data structures to efficiently implement autocomplete features, providing real-time suggestions as users type their queries. This approach optimizes search performance by quickly narrowing down possible matches from a large dataset of user profiles, job postings, and content.
-
-**Challenges:** Implementing autocomplete search involves efficiently handling and updating trie structures to reflect dynamic changes in user data. LinkedIn must balance between memory usage and search performance to deliver responsive autocomplete suggestions. Additionally, ensuring accuracy and relevance in suggested results amidst varying user search behaviors presents a significant challenge.
-
-**Benefits:** Using trie data structures for autocomplete search offers several advantages:
-- Efficient Prefix Matching: Tries allow rapid prefix matching by traversing nodes corresponding to input characters, enabling quick identification of potential completions.
-- Space Optimization: Trie structures optimize memory usage by storing shared prefixes once, minimizing redundancy in storing similar search terms.
-- Real-time Suggestions: Trie traversal facilitates real-time generation of autocomplete suggestions as users input characters, enhancing search usability and efficiency.
-  
-**Complexity Analysis**
-
-Time Complexity: Trie operations, including insertion, deletion, and search, typically operate in O(m) time complexity, where m is the length of the search term.
-
-Space Complexity: Tries consume space proportional to the number of unique search terms and the average length of these terms.
-
-* * *
 
 ### 21. **Missing Sections in a LinkedIn Profile**
 
