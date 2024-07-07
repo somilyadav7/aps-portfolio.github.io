@@ -1,5 +1,3 @@
-# Portfolio - LinkedIn
-
 <dl>
 <dt>Course Name</dt>
 <dd>Algorithmic Problem Solving</dd>
@@ -24,8 +22,9 @@ This page hosts:
 
 1. [Introduction](#introduction)
 2. [Need of Portfolio](#need-of-portfolio)
-2. [Objectives](#objectives)
-4. [Business Use Cases](#business-use-cases)
+3. [Design](#design)
+4. [Objectives](#objectives)
+5. [Business Use Cases](#business-use-cases)
 
 * * *
 **Enhancing LinkedIn Services through Data Structures and Algorithms**
@@ -39,9 +38,55 @@ By optimizing recommendation systems for improved relevance, refining search alg
 
 ## Need of Portfolio
 
-A portfolio focused on LinkedIn is necessary because it addresses the complex challenges of optimizing a professional networking platform through the application of data structures and algorithms (DSA). Enhancing functionalities such as search algorithms, recommendation systems and network analysis can significantly improve user engagement and satisfaction. By applying theoretical knowledge from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to real-world scenarios, this portfolio bridges the gap between academic learning and practical implementation. It not only showcases the ability to solve real-world problems but also demonstrates a commitment to improving the efficiency and effectiveness of LinkedIn services, making it an invaluable resource for professional development and innovation in the tech industry.
+  A portfolio focused on LinkedIn is necessary because it addresses the complex challenges of optimizing a professional networking platform through the application of data structures and algorithms (DSA). Enhancing functionalities such as search algorithms, recommendation systems and network analysis can significantly improve user engagement and satisfaction. By applying theoretical knowledge from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to real-world scenarios, this portfolio bridges the gap between academic learning and practical implementation. It not only showcases the ability to solve real-world problems but also demonstrates a commitment to improving the efficiency and effectiveness of LinkedIn services, making it an invaluable resource for professional development and innovation in the tech industry.
 
-# Objectives
+## Design
+  LinkedIn has over 930 million users in 200 countries. At peak load, the site is serving nearly 5 million user profile pages a second (a user’s profile page lists things like their job history, skills, recommendations, cringy influencer posts, etc.)
+
+The workload is extremely read-heavy, where 99% of requests are reads and less than 1% are writes (you probably spend a lot more time stalking on LinkedIn versus updating your profile).
+
+To manage the increase in traffic, LinkedIn incorporated Couchbase (a distributed NoSQL database) into their stack as a caching layer. They’ve been able to serve 99% of requests with this caching system, which drastically reduced latency and cost.
+
+LinkedIn stores the data for user profiles (and also a bunch of other stuff like InMail messages) in a distributed document database called Espresso (this was created at LinkedIn). Prior to that, they used a relational database (Oracle) but they switched over to a document-oriented database for several reasons….
+
+**1. Horizontal Scalability**
+  Document databases are generally much easier to scale than relational databases as sharding is designed into the architecture. The relational paradigm encourages normalization, where data is split into tables with relations between them. For example, a user’s profile information (job history, location, skills, etc.) could be stored in a different table compared to their post history (stored in a user_posts table). Rendering a user’s profile page would mean doing a join between the profile information table and the user posts table.
+
+**2. Schema Flexibility**
+  LinkedIn wanted to be able to iterate on the product quickly and easily add new features to a user’s profile. However, schema migrations in large relational databases can be quite painful, especially if the database is horizontally sharded.
+On the other hand, document databases are schemaless, so they don’t enforce a specific structure for the data being stored. Therefore, you can have documents with very different types of data in them. Also, you can easily add new fields, change the types of existing fields or store new structures of data.
+
+### Scalability Issues with Espresso
+  LinkedIn migrated off Oracle to **Espresso** in the mid-2010s and this worked extremely well. They were able to scale to 1.4 million queries per second by adding additional nodes to the cluster.
+
+![Espresso Architectur](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/504e325d-23d6-49b3-b67a-e907cb888ca0/EspressoArc.png)
+
+However, they eventually reached the scaling limits of Espresso where they couldn’t add additional machines to the cluster. In any distributed system, there are shared components that are used by all the nodes in the cluster.
+In Espresso’s case, the shared components are
+- Routing Layer - responsible for directing requests to the appropriate storage node
+- Metadata Store - manages metadata on node failures, replication, backups, etc.
+- Coordination Service - manages the distribution of data and work amongst nodes and node replicas.
+
+LinkedIn reached the upper limits of these shared components so they couldn’t add additional storage nodes. Resolving this scaling issue would require a major re-engineering effort. Instead, the engineers decided to take a simpler approach and add **Couchbase** as a caching layer to reduce pressure on Espresso.
+
+### Couchbase
+  **Couchbase** is a combination of ideas from Membase and CouchDB, where you have the highly scalable caching layer of Membase and the flexible data model of CouchDB. It’s both a key/value store and a document store, so you can perform Create/Read/Update/Delete (CRUD) operations using the simple API of a key/value store (add, set, get, etc.) but the value can be represented as a JSON document. With this, you can access your data with the primary key (like you would with a key/value store), or you can use N1QL (pronounced nickel). This is an SQL-like query language for Couchbase that allows you to retrieve your data arbitrarily and also do joins and aggregation.
+
+### LinkedIn’s Cache Design
+  When the Profile backend service sends a read request to **Espresso**, it goes to an Espresso Router node. The Router nodes maintain their own internal cache (check the article for more details on this) and first try to serve the read from there.
+
+If the user profile isn’t cached locally in the Router node, then it will send the request to **Couchbase**, which will generate a cache hit or a miss (the profile wasn’t in the Couchbase cache). **Couchbase** is able to achieve a cache hit rate of over 99%, but in the rare event that the profile isn’t cached the request will go to the Espresso storage node.
+
+For writes (when a user changes their job history, location, etc.), these are first done on Espresso storage nodes. The system is eventually consistent, so the writes are copied over to the Couchbase cache asynchronously.
+
+In order to minimize the amount of traffic that gets directed to Espresso, LinkedIn used three core design principles
+- Guaranteed Resilience against Couchbase Failures
+- All-time Cached Data Availability
+- Strictly defined SLO on data divergence
+
+LinkedIn followed the idea: keep it simple. And changed their architecture based on needs. They remain the biggest network for Professionals in 2024.
+
+## Objectives
 
 **1.** Applying theoretical concepts from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to practical, real-world problems within the LinkedIn platform.
 
