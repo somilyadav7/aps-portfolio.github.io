@@ -140,30 +140,30 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 2. 🔍**Profile Matching for Job Fit**
 
-**Algorithm**: Longest Common Subsequence
+**Algorithm**: Knuth-Morris-Pratt (KMP) Algorithm
 
-**Use Case:** Recruiters on LinkedIn use the LCS algorithm to enhance job matching accuracy between job descriptions and user profiles. This algorithm identifies the longest sequence of overlapping skills, experiences, and qualifications shared between a job description and a candidate's profile. By focusing on these common elements, recruiters can better assess candidate suitability and recommend relevant job opportunities.
+**Use Case:** Recruiters on LinkedIn use the KMP algorithm to enhance job matching accuracy between job descriptions and user profiles. The KMP algorithm efficiently searches for occurrences of a "pattern" (such as skills, experiences, and qualifications) within a "text" (job descriptions or candidate profiles) by preprocessing the pattern to create a partial match table. This allows for quick identification of relevant skills and qualifications shared between job descriptions and candidate profiles.
 
 **Challenges:**
 - Data Variability: Variations in how skills and qualifications are described in profiles and job descriptions can complicate accurate matching.
 - Scalability: Handling large volumes of profiles and job listings efficiently, ensuring quick and accurate matching without performance degradation.
-- Relevance: Ensuring that identified common subsequences truly reflect essential job qualifications to avoid mismatches.
+- Relevance: Ensuring that identified substrings truly reflect essential job qualifications to avoid mismatches.
 
 **Benefits:**
-- Precision Matching: LCS enhances job recommendation accuracy by pinpointing the most pertinent skills and experiences shared between profiles and job requirements.
-- Flexibility in Matching: It accommodates non-contiguous matches, meaning skills and experiences can be matched even if they appear in different orders or with additional context in either profiles or job descriptions.
-- Relevance Focus: Identifying the longest sequence of relevant skills ensures that job recommendations closely align with the candidate's capabilities and the employer's needs.
+- Fast Search: The KMP algorithm significantly reduces the time complexity of substring search, making the matching process efficient.
+- Preprocessing Advantage: By preprocessing the pattern, the KMP algorithm avoids redundant comparisons, improving performance.
+- Relevance Focus: Identifying exact matches of relevant skills ensures that job recommendations closely align with the candidate's capabilities and the employer's needs.
 
-**Complexity Analysis**
-- **Time Complexity:** O(N * M) where N and M are the length of the two strings.
-- **Space Complexity:** O(N+M) auxiliary recursion stack space where N and M are the length of the two strings.
+**Complexity Analysis:**
+- **Time Complexity:** O(N + M) where N is the length of the text and M is the length of the pattern.
+- **Space Complexity:** O(M) for the partial match table.
 
 **Implementation:**
-- LCS identifies the longest sequence of common elements between two sequences.
-- Compare each skill and qualification in the job description with those in the candidate's profile.
-- Find the longest subsequence where the elements appear in the same order (though not necessarily contiguous).
+- Preprocess the pattern to create an LPS (longest prefix suffix) array that helps in skipping unnecessary comparisons.
+- Traverse through the text and pattern using two pointers, comparing characters.
+- Adjust the pattern pointer based on the LPS array upon mismatches to efficiently search for occurrences of the pattern within the text.
   
-[Code for Longest Common Subsequence](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp) [[5]](https://takeuforward.org/data-structure/longest-common-subsequence-dp-25/)
+[Code for KMP Algorithm](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/kmp.cpp) [[5]](https://cp-algorithms.com/string/prefix-function.html)
 
 * * *
 
@@ -598,32 +598,32 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 * * *
 
-### 17. 🔍 **Missing Sections in a LinkedIn Profile**
+### 17. 📊 **Scoring Algorithm for SSI Score in LinkedIn**
 
-**Algorithm:** Set Difference
+**Algorithm:** Dynamic Programming
 
-**Use Case:** LinkedIn profiles contain various sections like "Experience," "Skills," "Education," "Certifications," and "Projects." To enhance user profiles, LinkedIn identifies which recommended sections are absent in a user's profile using the Set Difference algorithm.
+**Use Case:** LinkedIn computes the Social Selling Index (SSI) score to quantify a user's effectiveness in social selling activities. Using dynamic programming, LinkedIn calculates this score based on several key metrics.
 
 **Challenges:**
-- Data Variability: Handling diverse profile structures and formats from different users.
-- Scalability: Efficiently processing large volumes of profiles and recommended sections.
-- Accuracy: Ensuring precise identification of missing sections to provide relevant recommendations.
+- Metric Integration: Incorporating diverse metrics like profile completeness, network influence, engagement, and content quality.
+- Complexity Management: Handling the complexity of metric interactions and their contributions to the overall score.
+- Real-time Updates: Ensuring timely updates reflecting users' current activities and network dynamics.
 
 **Benefits:**
-- Enhanced Profiles: Helps users complete their profiles by suggesting missing sections.
-- User Engagement: Encourages users to provide comprehensive information, improving their visibility to recruiters and connections.
-- Personalization: Tailors recommendations based on individual profile completeness.
+- Quantitative Assessment: Provides a numerical score reflecting user engagement and effectiveness in social selling.
+- Performance Tracking: Enables users to monitor their progress and identify areas for improvement.
+- Benchmarking: Facilitates comparison against peers and industry standards.
 
 **Implementation:**
-- Representation: Use sets to represent existing profile sections and recommended sections.
-- Set Difference Calculation: Compute the difference between the set of recommended sections and the set of existing sections to identify missing sections.
-- Recommendations: Present missing sections to users as suggestions for profile improvement.
+- Metric Definition: Define metrics such as profile completeness, network reach, engagement rate, and content relevance.
+- State Representation: Use dynamic programming to maintain states representing cumulative contributions of each metric.
+- Score Calculation: Compute the SSI score iteratively by optimizing metric contributions to maximize user engagement and effectiveness.
 
 **Complexity Analysis:**
-- **Time Complexity:** Calculating set difference: O(n), where n is the number of sections (assuming average case for set operations).
-- **Space Complexity:** Storing sets: O(m + k), where m is the number of existing sections and k is the number of recommended sections.
+- **Time Complexity:** Calculating set difference involves iterating through sections, resulting in a time complexity of O(n), where n is the total number of sections (average case for set operations).
+- **Space Complexity:** Storing sets requires O(m + k) space, where m is the number of existing sections and k is the number of recommended sections.
 
-[Code for Set Difference](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/setdiff.cpp) [[19]](https://www.geeksforgeeks.org/std-set_difference-in-cpp/)
+[Code using Dynamic Programming](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/dp.cpp) [[19]](https://cp-algorithms.com/dynamic_programming/intro-to-dp.html)
 
 * * *
 
@@ -735,7 +735,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 - [2] Wikipedia: [https://en.wikipedia.org/wiki/LinkedIn](https://en.wikipedia.org/wiki/LinkedIn)
 - [3] LinkedIn Blog: [https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second](https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second)
 - [4] Breadth First Search Algorithm: [https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
-- [5] Longest Common Subsequence Algorithm: [https://takeuforward.org/data-structure/longest-common-subsequence-dp-25/](https://takeuforward.org/data-structure/longest-common-subsequence-dp-25/)
+- [5] KMP Algorithm: [https://cp-algorithms.com/string/prefix-function.html](https://cp-algorithms.com/string/prefix-function.html)
 - [6] Trie Auto Complete Feature: [https://www.geeksforgeeks.org/auto-complete-feature-using-trie/](https://www.geeksforgeeks.org/auto-complete-feature-using-trie/)
 - [7] Heap Sort: [https://www.hackerearth.com/practice/algorithms/sorting/heap-sort/tutorial/](https://www.hackerearth.com/practice/algorithms/sorting/heap-sort/tutorial/)
 - [8] Robin Karp Algorithm: [https://cp-algorithms.com/string/rabin-karp.html](https://cp-algorithms.com/string/rabin-karp.html)
@@ -749,7 +749,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 - [16] Merge Sort Algorithm: [https://www.geeksforgeeks.org/merge-sort/](https://www.geeksforgeeks.org/merge-sort/)
 - [17] Heap Data Structure: [https://www.geeksforgeeks.org/heap-data-structure/](https://www.geeksforgeeks.org/heap-data-structure/)
 - [18] Huffman Coding and Decoding: [https://www.topcoder.com/thrive/articles/huffman-coding-and-decoding-algorithm](https://www.topcoder.com/thrive/articles/huffman-coding-and-decoding-algorithm)
-- [19] Set Difference: [https://www.geeksforgeeks.org/std-set_difference-in-cpp/](https://www.geeksforgeeks.org/std-set_difference-in-cpp/)
+- [19] Dyanamic Programming: [https://cp-algorithms.com/dynamic_programming/intro-to-dp.html](https://cp-algorithms.com/dynamic_programming/intro-to-dp.html)
 - [20] K Dimensional Tree: [https://www.geeksforgeeks.org/search-and-insertion-in-k-dimensional-tree/](https://www.geeksforgeeks.org/search-and-insertion-in-k-dimensional-tree/)
 - [21] Lazy propagation in Segment Tree: [https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree/](https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree/)
 - [22] B tree: [https://www.geeksforgeeks.org/introduction-of-b-tree-2/](https://www.geeksforgeeks.org/introduction-of-b-tree-2/)
