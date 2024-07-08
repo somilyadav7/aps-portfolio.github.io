@@ -21,7 +21,7 @@
 
 * * *
 
-<img src="https://download.logo.wine/logo/LinkedIn/LinkedIn-Logo.wine.png" alt="LinkedInlogo" >
+<img src="https://download.logo.wine/logo/LinkedIn/LinkedIn-Logo.wine.png" alt="LinkedInlogo" width="1500" height="500" >
 
 * * *
 
@@ -40,7 +40,7 @@
 
 ## 🌟 Introduction 
 
-  LinkedIn is a platform designed for professionals to connect and network within the business community. Established in 2002, the platform serves as a hub for professionals to engage with former and current coworkers, expand their professional network, collaborate within their field, exchange business concepts, explore job opportunities, and recruit potential employees. This project's portfolio delves into how utilizing data structures and algorithms can greatly improve the efficiency and effectiveness of LinkedIn, utilizing skills and knowledge from the Algorithmic Problem Solving (APS) course.
+  LinkedIn[[1]](https://www.linkedin.com/) is a platform designed for professionals to connect and network within the business community. Established in 2002, the platform serves as a hub for professionals to engage with former and current coworkers, expand their professional network, collaborate within their field, exchange business concepts, explore job opportunities, and recruit potential employees. This project's portfolio delves into how utilizing data structures and algorithms can greatly improve the efficiency and effectiveness of LinkedIn, utilizing skills and knowledge from the Algorithmic Problem Solving (APS) course.
 
 This portfolio showcases how LinkedIn can be significantly improved by enhancing recommendation systems, refining search algorithms, and addressing other key functionalities. Every scenario connects theory to real-world business problems, demonstrating how advanced algorithms can enhance LinkedIn's performance, reliability, and efficiency.
 
@@ -50,13 +50,13 @@ This portfolio showcases how LinkedIn can be significantly improved by enhancing
 
 ## 🗄️ Design
 
-  LinkedIn has over 930 million users in 200 countries. At peak load, the site is serving nearly 5 million user profile pages a second (a user’s profile page lists things like their job history, skills, recommendations, cringy influencer posts, etc.)
+  LinkedIn[[2]](https://en.wikipedia.org/wiki/LinkedIn) has over 930 million users in 200 countries. At peak load, the site is serving nearly 5 million user profile pages a second (a user’s profile page lists things like their job history, skills, recommendations, cringy influencer posts, etc.)
 
 The workload is extremely read-heavy, where 99% of requests are reads and less than 1% are writes (you probably spend a lot more time stalking on LinkedIn versus updating your profile).
 
 To manage the increase in traffic, LinkedIn incorporated Couchbase (a distributed NoSQL database) into their stack as a caching layer. They’ve been able to serve 99% of requests with this caching system, which drastically reduced latency and cost.
 
-LinkedIn stores the data for user profiles (and also a bunch of other stuff like InMail messages) in a distributed document database called Espresso (this was created at LinkedIn). Prior to that, they used a relational database (Oracle) but they switched over to a document-oriented database for several reasons….
+LinkedIn[[3]](https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second) stores the data for user profiles (and also a bunch of other stuff like InMail messages) in a distributed document database called Espresso (this was created at LinkedIn). Prior to that, they used a relational database (Oracle) but they switched over to a document-oriented database for several reasons….
 
 **1. Horizontal Scalability**
   Document databases are generally much easier to scale than relational databases as sharding is designed into the architecture. The relational paradigm encourages normalization, where data is split into tables with relations between them. For example, a user’s profile information (job history, location, skills, etc.) could be stored in a different table compared to their post history (stored in a user_posts table). Rendering a user’s profile page would mean doing a join between the profile information table and the user posts table.
@@ -109,12 +109,34 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ## 📊 Business Use Cases
 
-### 1. **Profile Matching for Job Fit**
+### 1. **Connection Suggestions**
+
+**Algorithm:** Breadth First Search(BFS)
+
+**Use Case:** LinkedIn aims to enhance its user experience by providing connection suggestions to users. These suggestions often include second and third-degree connections, which are people that the user does not know directly but is connected to through mutual connections. 
+
+**Challenges:** The main challenge in providing accurate connection suggestions is efficiently navigating LinkedIn vast user network. With millions of users and billions of connections, the platform needs to identify potential connections quickly and accurately. The algorithm must handle dynamic and ever-growing data, ensuring real-time updates as users form new connections. 
+
+**Benefits:** 
+- Breadth First Search (BFS) is well-suited for this use case because it efficiently explores the shortest paths in an unweighted graph, such as LinkedIn's user network.
+- By starting from a user's profile and performing a BFS, LinkedIn can quickly identify second and third-degree connections, which are typically the most relevant for connection suggestions.
+- BFS ensures that all nodes at the current level of connection are explored before moving to the next level, guaranteeing that the shortest paths are found. 
+
+**Complexity Analysis**
+
+- **Time Complexity:** The time complexity of BFS is O(V+E), where V is the number of vertices(users) and E is the number of edges(connections).
+
+Space Complexity: The space complexity of BFS is O(V), which is needed to store the queue and the visited nodes. 
+
+[Code for Breadth First Search Algorithm](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/BFS.cpp) [[4]](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
+
+* * *
+
+### 2. **Profile Matching for Job Fit**
 
 **Algorithm**: Longest Common Subsequence
 
-**Use Case:**
-Recruiters on LinkedIn use the LCS algorithm to enhance job matching accuracy between job descriptions and user profiles. This algorithm identifies the longest sequence of overlapping skills, experiences, and qualifications shared between a job description and a candidate's profile. By focusing on these common elements, recruiters can better assess candidate suitability and recommend relevant job opportunities.
+**Use Case:** Recruiters on LinkedIn use the LCS algorithm to enhance job matching accuracy between job descriptions and user profiles. This algorithm identifies the longest sequence of overlapping skills, experiences, and qualifications shared between a job description and a candidate's profile. By focusing on these common elements, recruiters can better assess candidate suitability and recommend relevant job opportunities.
 
 **Challenges:**
 - Data Variability: Variations in how skills and qualifications are described in profiles and job descriptions can complicate accurate matching.
@@ -127,15 +149,15 @@ Benefits:
 - Relevance Focus: Identifying the longest sequence of relevant skills ensures that job recommendations closely align with the candidate's capabilities and the employer's needs.
 
 **Complexity Analysis**
-
-Time Complexity: O(N * M) where N and M are the length of the two strings.
+- **Time Complexity:** O(N * M) where N and M are the length of the two strings.
 
 Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the length of the two strings.
 
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp)
+[Code for Longest Common Subsequence](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Longest-Common-Subsequence.cpp) [[5]](https://takeuforward.org/data-structure/longest-common-subsequence-dp-25/)
+
 * * *
 
-### 2. **Profile Search with Auto Suggestion**
+### 3. **Search with Auto Suggestion**
 
 **Algorithm:** Trie Data Structure with Autocomplete Feature
 
@@ -153,20 +175,18 @@ Space Complexity: O(N+M) auxiliary recursion stack space where N and M are the l
 - Autocomplete Suggestions: By traversing the trie, LinkedIn can provide real-time autocomplete suggestions, enhancing user experience by making it easier and faster to find relevant profiles.
 
 **Complexity Analysis**
+- **Time Complexity:** O(N*L) where N is the number of words in the trie and L is the length of the longest word in the trie.
+- **Space Complexity:**  O(N*L+N * ALPHABET_SIZE)
 
-Time Complexity: O(N*L) where N is the number of words in the trie and L is the length of the longest word in the trie.
-
-Space Complexity:  O(N*L+N * ALPHABET_SIZE)
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/trieAutoComplete.cpp)
+[Code for Trie implementing Auto Complete Feature](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/trieAutoComplete.cpp) [[6]](https://www.geeksforgeeks.org/auto-complete-feature-using-trie/)
 
 * * *
 
-### 3. **Job Recommendations for Users**
+### 4. **Job Recommendations for Users**
 
 **Algorithm:** Heap Sort
 
-LinkedIn provides real-time job recommendations to its users, ensuring they have access to the most relevant job opportunities based on their profiles, search history and activity on the platform. This feature is crucial for both job seekers looking for new opportunities and employers seeking the best candidates.
+**Use Case:** LinkedIn provides real-time job recommendations to its users, ensuring they have access to the most relevant job opportunities based on their profiles, search history and activity on the platform. This feature is crucial for both job seekers looking for new opportunities and employers seeking the best candidates.
 
 **Challenges:** 
 - The main challenge in delivering real-time job recommendations lies in processing large volumes of job postings and user data efficiently.
@@ -178,35 +198,10 @@ LinkedIn provides real-time job recommendations to its users, ensuring they have
 - Real-time Updates: LinkedIn dynamically updates the heap structure as new job postings are added or user preferences change, ensuring recommendations reflect the latest opportunities.
 
 **Complexity Analysis**
+- **Time Complexity:** The time complexity of heap sort is O(nlogn), where n is the number of job postings.
+- **Space Complexity:** O(log n), due to the recursive call stack. However, auxiliary space can be O(1) for iterative implementation.
 
-Time Complexity: The time complexity of heap sort is O(nlogn), where n is the number of job postings.
-
-Space Complexity: O(log n), due to the recursive call stack. However, auxiliary space can be O(1) for iterative implementation.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/heapSort.cpp)
-
-* * *
-
-### 4. **Connection Suggestions**
-
-**Algorithm:** Breadth First Search (BFS)
-
-LinkedIn aims to enhance its user experience by providing connection suggestions to users. These suggestions often include second and third-degree connections, which are people that the user does not know directly but is connected to through mutual connections. 
-
-**Challenges:** The main challenge in providing accurate connection suggestions is efficiently navigating LinkedIn vast user network. With millions of users and billions of connections, the platform needs to identify potential connections quickly and accurately. The algorithm must handle dynamic and ever-growing data, ensuring real-time updates as users form new connections. 
-
-**Benefits:** 
-- Breadth First Search (BFS) is well-suited for this use case because it efficiently explores the shortest paths in an unweighted graph, such as LinkedIn's user network.
-- By starting from a user's profile and performing a BFS, LinkedIn can quickly identify second and third-degree connections, which are typically the most relevant for connection suggestions.
-- BFS ensures that all nodes at the current level of connection are explored before moving to the next level, guaranteeing that the shortest paths are found. 
-
-**Complexity Analysis**
-
-Time Complexity: The time complexity of BFS is O(V+E), where V is the number of vertices(users) and E is the number of edges(connections).
-
-Space Complexity: The space complexity of BFS is O(V), which is needed to store the queue and the visited nodes. 
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/BFS.cpp)
+[Code for Heap Sort](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/heapSort.cpp) [[7]](https://www.hackerearth.com/practice/algorithms/sorting/heap-sort/tutorial/)
 
 * * *
 
@@ -214,19 +209,17 @@ Space Complexity: The space complexity of BFS is O(V), which is needed to store 
 
 **Algorithm:** Rabin-Karp Algorithm
 
-LinkedIn aims to enhance user experience by detecting and suggesting similar profiles based on shared skills and experiences. This feature helps users discover like-minded professionals, potential mentors, or candidates with similar qualifications for networking or recruitment purposes.
+**Use Case:** LinkedIn aims to enhance user experience by detecting and suggesting similar profiles based on shared skills and experiences. This feature helps users discover like-minded professionals, potential mentors, or candidates with similar qualifications for networking or recruitment purposes.
 
 **Challenges:** The primary challenge in profile similarity detection is efficiently comparing a vast number of profiles. Each profile contains multiple sections, such as skills, work experiences, and education, which need to be analyzed for similarities. Handling this large volume of data in real-time requires a robust algorithm that can quickly and accurately identify matching substrings.
 
 **Benefits:** The Rabin-Karp algorithm is particularly effective for this use case due to its ability to efficiently find matching substrings within large datasets. By using hashing, Rabin-Karp can quickly compare sections of profiles, identifying similar skills and experiences with minimal computational overhead. This efficiency is crucial for real-time applications, allowing LinkedIn to provide immediate profile similarity suggestions as users update their profiles or as new users join the platform.
 
 **Complexity Analysis**
+- **Time Complexity:** The average time complexity of Rabin-Karp for matching a pattern of length m within a text of length n is O(n + m). 
+- **Space Complexity:** The space complexity of Rabin-Karp is O(m), where m is the length of the pattern. This is required to store the hash values and the pattern itself.
 
-Time Complexity: The average time complexity of Rabin-Karp for matching a pattern of length m within a text of length n is O(n + m). 
-
-Space Complexity: The space complexity of Rabin-Karp is O(m), where m is the length of the pattern. This is required to store the hash values and the pattern itself.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/rabinKarp.cpp)
+[Code for Rabin-Karp Algorithm](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/rabinKarp.cpp) [[8]](https://cp-algorithms.com/string/rabin-karp.html)
 
 * * *
 
@@ -234,19 +227,17 @@ Space Complexity: The space complexity of Rabin-Karp is O(m), where m is the len
 
 **Algorithm:** Quick Sort
 
-LinkedIn aims to keep users engaged by displaying the most popular and engaging posts and articles prominently. Identifying and showcasing trending content ensures that users are presented with relevant and timely information, fostering a dynamic and interactive platform.
+**Use Case:** LinkedIn aims to keep users engaged by displaying the most popular and engaging posts and articles prominently. Identifying and showcasing trending content ensures that users are presented with relevant and timely information, fostering a dynamic and interactive platform.
 
 **Challenges:** The primary challenge in identifying and displaying trending content is efficiently handling the massive volume of data generated by user interactions. With millions of posts and articles being created, liked, shared, and commented on daily, LinkedIn needs a robust sorting algorithm to rank content accurately and promptly. The algorithm must handle real-time updates to engagement metrics and ensure that the trending content list is continuously updated.
 
 **Benefits:** Quick Sort is particularly well-suited for sorting large datasets due to its average-case time complexity of O(n log n) and its in-place sorting capability. For LinkedIn, Quick Sort can efficiently rank posts and articles by their engagement metrics, ensuring that the most trending content rises to the top. This enhances user experience by providing timely and relevant content, increasing user engagement and satisfaction. The algorithm's ability to handle large volumes of data makes it ideal for LinkedIn’s extensive content repository.
 
 **Complexity Analysis**
+- **Time Complexity:** The average time complexity of Quick Sort is O(nlogn), where n is the number of posts or articles. 
+- **Space Complexity:** The space complexity of Quick Sort is O(log n) for the in-place version, which is needed for the recursion stack.
 
-Time Complexity: The average time complexity of Quick Sort is O(nlogn), where n is the number of posts or articles. 
-
-Space Complexity: The space complexity of Quick Sort is O(log n) for the in-place version, which is needed for the recursion stack.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/quickSort.cpp)
+[Code for Quick Sort](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/quickSort.cpp) [[9]](https://www.geeksforgeeks.org/quick-sort-algorithm/)
 
 * * *
 
@@ -254,7 +245,7 @@ Space Complexity: The space complexity of Quick Sort is O(log n) for the in-plac
 
 **Algorithm:** Aho-Corasick Algorithm
 
-LinkedIn needs to efficiently detect and prevent spam content to maintain a professional and valuable user experience. Using the Trie data structure combined with the Aho-Corasick algorithm allows LinkedIn to quickly and accurately identify spam content by matching patterns against a predefined set of spam indicators.
+**Use Case:** LinkedIn needs to efficiently detect and prevent spam content to maintain a professional and valuable user experience. Using the Trie data structure combined with the Aho-Corasick algorithm allows LinkedIn to quickly and accurately identify spam content by matching patterns against a predefined set of spam indicators.
 
 **Challenges:** 
 - Volume of Content: Managing and scanning the vast amount of user-generated content efficiently.
@@ -267,12 +258,10 @@ LinkedIn needs to efficiently detect and prevent spam content to maintain a prof
 - Ease of Update: Adding new spam patterns to the Trie is straightforward, ensuring that LinkedIn can adapt to emerging spam tactics quickly and without significant overhead.
 
 **Complexity Analysis:**
+- **Time Complexity:** O(n + l + z), where ‘n’ is the length of the text, ‘l’ is the length of keywords, and ‘z’ is the number of matches.
+- **Space Complexity:** O(l * q), where ‘q’ is the length of the alphabet since that is the maximum number of children a node can have.
 
-**Time Complexity:** O(n + l + z), where ‘n’ is the length of the text, ‘l’ is the length of keywords, and ‘z’ is the number of matches.
-  
-**Space Complexity:** O(l * q), where ‘q’ is the length of the alphabet since that is the maximum number of children a node can have.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/ahoCorasick.cpp)
+[Code for Aho-Corasick Algorithm](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/ahoCorasick.cpp) [[10]](https://cp-algorithms.com/string/aho_corasick.html)
 
 * * *
 
@@ -280,19 +269,17 @@ LinkedIn needs to efficiently detect and prevent spam content to maintain a prof
 
 **Algorithm:** Trie Data Structure
 
-LinkedIn aims to help users optimize their profiles by providing suggestions for updates and improvements. These suggestions can include common phrases or keywords that enhance profile visibility and relevance to potential employers or connections. By leveraging a trie data structure, LinkedIn can efficiently store and retrieve these common phrases or keywords, offering users real-time, contextually relevant suggestions as they update their profiles.
+**Use Case:** LinkedIn aims to help users optimize their profiles by providing suggestions for updates and improvements. These suggestions can include common phrases or keywords that enhance profile visibility and relevance to potential employers or connections. By leveraging a trie data structure, LinkedIn can efficiently store and retrieve these common phrases or keywords, offering users real-time, contextually relevant suggestions as they update their profiles.
 
 **Challenges:** LinkedIn must efficiently manage a large dictionary of phrases and keywords that are constantly evolving with industry trends. The system needs to provide real-time suggestions as users type, which requires fast and efficient data retrieval.
 
 **Benefits:** The trie data structure is particularly well-suited for this use case due to its ability to store and retrieve strings efficiently. Tries allow for fast prefix searches, which means LinkedIn can provide real-time suggestions as users type keywords or phrases into their profiles. This efficiency enhances user experience by offering immediate and relevant suggestions, encouraging users to optimize their profiles with industry-standard terms and phrases. Tries also handle large dictionaries of phrases and keywords with ease, making them scalable for LinkedIn’s extensive user base.
 
 **Complexity Analysis**
+- **Time Complexity:** The time complexity for inserting and searching in a trie is O(L), where L is the length of the word.
+- **Space Complexity:** The space complexity of a trie is O(AL), where A is the size of the alphabet and L is the number of words.
 
-Time Complexity: The time complexity for inserting and searching in a trie is O(L), where L is the length of the word.
-
-Space Complexity: The space complexity of a trie is O(AL), where A is the size of the alphabet and L is the number of words.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/trieAutoComplete.cpp)
+[Code using Trie Data Structure](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/trieAutoComplete.cpp) [[11]](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/)
 
 * * *
 
@@ -300,19 +287,17 @@ Space Complexity: The space complexity of a trie is O(AL), where A is the size o
 
 **Algorithm:** Z Algorithm
 
-LinkedIn aims to enhance the accuracy of its search results and content recommendations by efficiently matching keywords within posts and articles. Accurate keyword matching ensures that users find relevant content quickly, whether they are searching for specific topics, industry insights, or professional advice. By leveraging the Z algorithm, LinkedIn can improve the precision of its search functionality and content recommendations, enhancing user satisfaction and engagement.
+**Use Case:** LinkedIn aims to enhance the accuracy of its search results and content recommendations by efficiently matching keywords within posts and articles. Accurate keyword matching ensures that users find relevant content quickly, whether they are searching for specific topics, industry insights, or professional advice. By leveraging the Z algorithm, LinkedIn can improve the precision of its search functionality and content recommendations, enhancing user satisfaction and engagement.
 
 **Challenges:** Each search query needs to be processed against millions of posts and articles to find relevant matches. The algorithm must be capable of performing these matches quickly and accurately to provide real-time search results and recommendations.
 
 **Benefits:** The Z algorithm is highly efficient for this use case due to its linear time complexity for pattern matching. The Z algorithm processes the input text and pattern in O(n + m) time, where n is the length of the text and m is the length of the pattern. This efficiency is essential for handling large datasets and providing real-time keyword matching. By computing the Z array, the algorithm identifies all occurrences of the pattern (keyword) within the text, ensuring accurate and comprehensive matches. This accuracy enhances the relevance of search results and content recommendations, improving user experience. 
 
 **Complexity Analysis**
+- **Time Complexity:** The Z algorithm has a time complexity of O(n + m), where n is the length of the text and m is the length of the pattern.
+- **Space Complexity:** The space complexity of the Z algorithm is O(n + m) to store the Z array and the input text.
 
-Time Complexity: The Z algorithm has a time complexity of O(n + m), where n is the length of the text and m is the length of the pattern.
-
-Space Complexity: The space complexity of the Z algorithm is O(n + m) to store the Z array and the input text.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Zalgo.cpp)
+[Code for Z Algorithm](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Zalgo.cpp) [[12]](https://cp-algorithms.com/string/z-function.html)
 
 * * *
 
@@ -320,19 +305,17 @@ Space Complexity: The space complexity of the Z algorithm is O(n + m) to store t
 
 **Algorithm:** Topological Sort Algorithm
 
-LinkedIn aims to recommend professional groups to users in a logical and sequential manner based on their current affiliations, interests, and activity. Joining relevant groups can significantly enhance users' professional networks, provide access to valuable content, and foster meaningful interactions. By using topological sort, LinkedIn can ensure that group recommendations follow a logical order.
+**Use Case:** LinkedIn aims to recommend professional groups to users in a logical and sequential manner based on their current affiliations, interests, and activity. Joining relevant groups can significantly enhance users' professional networks, provide access to valuable content, and foster meaningful interactions. By using topological sort, LinkedIn can ensure that group recommendations follow a logical order.
 
 **Challenges:** The primary challenge in group recommendation is efficiently handling the dependencies and relationships between different groups. LinkedIn must consider the hierarchical structure of professional interests and affiliations to provide meaningful and contextually relevant recommendations.
 
 **Benefits:** Topological sort is particularly well-suited for this use case due to its ability to handle directed acyclic graphs (DAGs). In the context of group recommendations, a DAG can represent the hierarchical and dependency relationships between different professional groups. By performing a topological sort on this graph, LinkedIn can determine a logical sequence of group recommendations, ensuring that users are introduced to groups in an order that aligns with their professional progression and interests. This approach enhances the relevance and value of recommendations, encouraging users to join groups that are most beneficial to their professional growth. Additionally, topological sort is efficient, with a time complexity of O(V + E), where V is the number of vertices (groups) and E is the number of edges (dependencies).
 
 **Complexity Analysis**
+- **Time Complexity:** The time complexity of topological sort is O(V + E), where V is the number of vertices (groups) and E is the number of edges (dependencies).
+- **Space Complexity:** The space complexity of topological sort is O(V + E) to store the graph representation and the resulting sorted list.
 
-Time Complexity: The time complexity of topological sort is O(V + E), where V is the number of vertices (groups) and E is the number of edges (dependencies).
-
-Space Complexity: The space complexity of topological sort is O(V + E) to store the graph representation and the resulting sorted list.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/topoSort.cpp)
+[Code for Topological Sorting](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/topoSort.cpp) [[13]](https://www.geeksforgeeks.org/topological-sorting/)
 
 * * *
 
@@ -340,19 +323,17 @@ Space Complexity: The space complexity of topological sort is O(V + E) to store 
 
 **Algorithm:** Radix Sort
 
-LinkedIn aims to identify trending skills that are frequently mentioned in user profiles and job postings. By doing so, LinkedIn can provide insights into current industry demands and help users enhance their profiles to align with market trends. Additionally, identifying trending skills can help LinkedIn suggest relevant courses and learning materials to users, further enhancing their professional development.
+**Use Case:** LinkedIn aims to identify trending skills that are frequently mentioned in user profiles and job postings. By doing so, LinkedIn can provide insights into current industry demands and help users enhance their profiles to align with market trends. Additionally, identifying trending skills can help LinkedIn suggest relevant courses and learning materials to users, further enhancing their professional development.
 
 **Challenges:** The primary challenge in identifying trending skills is efficiently sorting and analyzing the large volume of data from millions of profiles and job postings. The algorithm must process this data quickly to provide real-time updates on trending skills. Handling the diverse ways in which skills are listed and ensuring accurate frequency counts is also a significant challenge.
 
 **Benefits:** Radix Sort is particularly well-suited for this use case due to its linear time complexity for sorting large datasets. Unlike comparison-based sorting algorithms, Radix Sort processes each digit of the numbers (or characters in the case of strings) in a fixed number of passes, making it highly efficient for sorting large volumes of data. This efficiency is crucial for processing the vast amount of data generated by LinkedIn users. Radix Sort can handle the diverse representations of skills by sorting them based on their frequency of appearance.
 
 **Complexity Analysis**
+- **Time Complexity:** The time complexity of Radix Sort is O(nk), where n is the number of items and k is the number of digits in the largest number (or characters in the longest string).
+- **Space Complexity:** The space complexity of Radix Sort is O(n + k), which is needed to hold the temporary arrays during sorting.
 
-Time Complexity: The time complexity of Radix Sort is O(nk), where n is the number of items and k is the number of digits in the largest number (or characters in the longest string).
-
-Space Complexity: The space complexity of Radix Sort is O(n + k), which is needed to hold the temporary arrays during sorting.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/radixsort.cpp)
+[Code for Radix Sort](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/radixsort.cpp) [[14]](https://www.javatpoint.com/radix-sort)
 
 * * *
 
@@ -360,19 +341,17 @@ Space Complexity: The space complexity of Radix Sort is O(n + k), which is neede
 
 **Algorithm:** Quick Select Algorithm
 
-LinkedIn aims to enhance its security measures by identifying and prioritizing the detection of fraudulent accounts based on suspicious activity metrics. Detecting and mitigating fraudulent activity is crucial to maintaining the integrity and trustworthiness of the platform. By using the Quick Select algorithm, LinkedIn can efficiently identify the top K suspicious accounts, allowing for focused and effective fraud detection efforts.
+**Use Case:** LinkedIn aims to enhance its security measures by identifying and prioritizing the detection of fraudulent accounts based on suspicious activity metrics. Detecting and mitigating fraudulent activity is crucial to maintaining the integrity and trustworthiness of the platform. By using the Quick Select algorithm, LinkedIn can efficiently identify the top K suspicious accounts, allowing for focused and effective fraud detection efforts.
 
 **Challenges:** LinkedIn must identify accounts exhibiting unusual or suspicious behaviors, such as high volumes of connection requests, message spamming, or profile views. The system must be capable of quickly identifying the most suspicious accounts to prioritize investigative efforts.
 
 **Benefits:** The Quick Select algorithm is particularly well-suited for this use case due to its efficiency in finding the k-th smallest (or largest) element in an unsorted list. Quick Select operates in O(n) average time complexity, making it ideal for quickly identifying the top K suspicious accounts based on predefined activity metrics. By focusing only on the most suspicious accounts, LinkedIn can allocate resources more effectively, ensuring timely intervention and reducing the risk of fraudulent activity.
 
 **Complexity Analysis**
+- **Time Complexity:** The average time complexity of Quick Select is O(n), where n is the number of accounts.
+- **Space Complexity:** The space complexity of Quick Select is O(1) for the iterative version, making it space-efficient and suitable for large datasets.
 
-Time Complexity: The average time complexity of Quick Select is O(n), where n is the number of accounts.
-
-Space Complexity: The space complexity of Quick Select is O(1) for the iterative version, making it space-efficient and suitable for large datasets.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/quickselect.cpp)
+[Code for Quick Sort Algorithm](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/quickselect.cpp) [[15]](https://www.geeksforgeeks.org/quickselect-algorithm/)
 
 * * *
 
@@ -380,19 +359,17 @@ Space Complexity: The space complexity of Quick Select is O(1) for the iterative
 
 **Algorithm:** Merge Sort
 
-LinkedIn needs to efficiently sort messages and notifications to enhance user experience by presenting the most relevant and timely information. Sorting can be based on various criteria such as timestamp, priority, or user-defined preferences.
+**Use Case:** LinkedIn needs to efficiently sort messages and notifications to enhance user experience by presenting the most relevant and timely information. Sorting can be based on various criteria such as timestamp, priority, or user-defined preferences.
 
 **Challenges:** The primary challenge in sorting messages and notifications is handling the large volume of data generated by LinkedIn users. The sorting algorithm must be efficient and scalable to process this data in real-time. Different sorting criteria, such as time received, importance, or user-defined preferences add to the complexity.
 
 **Benefits:** Merge Sort is an excellent choice for this use case due to its stable and efficient sorting capabilities. It has a time complexity of O(n log n) for both worst and average cases, making it reliable for large datasets. Merge Sort works by recursively dividing the data into smaller subarrays, sorting them, and then merging them back together. This divide-and-conquer approach ensures that the algorithm performs well even with large volumes of messages and notifications. Merge Sort is also stable, meaning it preserves the relative order of equal elements, which is important when sorting by multiple criteria.
 
 **Complexity Analysis**
+- **Time Complexity:**Merge Sort has a time complexity of O(n log n) for all cases (worst, average, and best).
+- **Space Complexity:** The space complexity of Merge Sort is O(n) due to the auxiliary space required for merging.
 
-Time Complexity: Merge Sort has a time complexity of O(n log n) for all cases (worst, average, and best).
-
-Space Complexity: The space complexity of Merge Sort is O(n) due to the auxiliary space required for merging.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/mergesort.cpp)
+[Code for Merge Sort](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/mergesort.cpp) [[16]](https://www.geeksforgeeks.org/merge-sort/)
 
 * * *
 
@@ -400,7 +377,7 @@ Space Complexity: The space complexity of Merge Sort is O(n) due to the auxiliar
 
 **Algorithm:** Trie Data Structure
 
-LinkedIn's ATS (Applicant Tracking System) score calculation aims to evaluate resumes based on specific parameters such as keywords, experience, education, and skills. A Trie data structure can be effectively used to store and match keywords and phrases from resumes, enabling quick and efficient scoring.
+**Use Case:** LinkedIn's ATS (Applicant Tracking System) score calculation aims to evaluate resumes based on specific parameters such as keywords, experience, education, and skills. A Trie data structure can be effectively used to store and match keywords and phrases from resumes, enabling quick and efficient scoring.
 
 **Challenges:** The primary challenges in calculating an ATS score include handling large volumes of resumes, accurately matching keywords and phrases, and ensuring that the scoring algorithm is efficient and scalable. The system must process resumes quickly and provide meaningful scores based on predefined criteria
 
@@ -410,20 +387,18 @@ LinkedIn's ATS (Applicant Tracking System) score calculation aims to evaluate re
 - Precision: Tries provide exact matches for keywords and phrases, improving the accuracy of the ATS scoring system.
 
 **Complexity Analysis**
+- **Time Complexity:** O(NL) for calculating ATS score, where N is the number of words in the resume and L is the average length of words.
+- **Space Complexity:** O(ML+NL), where M is the number of unique keywords in the Trie, L is the average length of words in the Trie, and N is the number of words in the resume.
 
-Time Complexity: O(NL) for calculating ATS score, where N is the number of words in the resume and L is the average length of words.
-
-Space Complexity: O(ML+NL), where M is the number of unique keywords in the Trie, L is the average length of words in the Trie, and N is the number of words in the resume.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/ats.cpp)
+[Code using Trie Data Structure](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/ats.cpp) [[11]](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/)
 
 * * *
 
 ### 15. **Handling "Not Interested" Selection on Posts or Ads**
 
-**Algorithm:** Hash Table (HashMap)
+**Algorithm:** Hash Table
 
-LinkedIn allows users to mark posts or ads as "not interested," aiming to personalize content by excluding unwanted items from their feed. A Hash Table (HashMap) can efficiently manage and retrieve these preferences, ensuring that marked posts or ads are appropriately filtered out.
+**Use Case:** LinkedIn allows users to mark posts or ads as "not interested," aiming to personalize content by excluding unwanted items from their feed. A Hash Table (HashMap) can efficiently manage and retrieve these preferences, ensuring that marked posts or ads are appropriately filtered out.
 
 **Challenges:** The primary challenges in managing "not interested" selections include ensuring fast retrieval of user preferences, scalability to handle a large number of users and posts, and minimizing memory usage while maintaining efficient operations. The system must also handle concurrent updates and provide real-time feedback to users without compromising performance.
 
@@ -433,44 +408,18 @@ LinkedIn allows users to mark posts or ads as "not interested," aiming to person
 - Scalability: Hash Tables can scale with LinkedIn’s growing user base and content volume, ensuring that the system remains responsive and efficient over time.
 
 **Complexity Analysis**
+- **Time Complexity:** Insertion, deletion, and lookup operations in a Hash Table have an average time complexity of O(1). In rare cases, these operations can degrade to O(n).
+- **Space Complexity:** The space complexity of a Hash Table is O(n), where n is the number of entries (user IDs with associated sets of "not interested" item IDs).
 
-Time Complexity: Insertion, deletion, and lookup operations in a Hash Table have an average time complexity of O(1). In rare cases, these operations can degrade to O(n).
-
-Space Complexity: The space complexity of a Hash Table is O(n), where n is the number of entries (user IDs with associated sets of "not interested" item IDs).
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/hashtable.cpp)
+[Code for Hash Map](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/hashtable.cpp) [[12]](https://www.geeksforgeeks.org/heap-data-structure/)
 
 * * *
-
-### 17. **Enhancing Content Display Based on User Interest**
-
-**Algorithm:** Priority Queue (Heap)
-
-LinkedIn aims to increase user engagement by recommending more content similar to posts that users have shown interest in (e.g., clicked "interested"). A Priority Queue, implemented with a Heap data structure, can efficiently manage and retrieve posts based on their relevance scores, ensuring that the most relevant and engaging content is prioritized.
-
-**Challenges:** The primary challenges in recommending content based on user interest include dynamically updating content rankings, handling a large volume of user interactions, and ensuring that recommendations remain relevant and diverse. The system must also balance between popular content and introducing new content to maintain user interest.
-
-**Benefits:** Using a Priority Queue (Heap) offers several advantages for this use case:
-- Efficiency: Heaps allow for efficient insertion and extraction of the highest-priority elements (in this case, posts with higher user interest scores), with operations typically performed in O(log n) time.
-- Dynamic Updates: The Priority Queue can dynamically adjust to changes in user interactions, ensuring that recently popular posts are prioritized.
-- Scalability: Heaps can scale with LinkedIn’s growing user base and content volume, maintaining fast and responsive operations for content recommendation.
-
-**Complexity Analysis**
-
-Time Complexity: Insertion and extraction operations in a Max-Heap have a time complexity of O(log n), where n is the number of elements (posts) in the heap.
-
-Space Complexity: The space complexity of a Heap is O(n), where n is the number of posts stored in the Priority Queue.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/maxheap.cpp)
-
-* * *
-
 
 ### 16. **Image and Video Compression**
 
 **Algorithm:** Huffman Coding
 
-Huffman coding, a widely used entropy encoding algorithm, is adept at achieving significant compression ratios by assigning shorter codes to more frequent symbols or data segments. This approach proves particularly effective in compressing images and videos, where reducing redundancy in pixel values or frames can lead to substantial savings in storage or transmission bandwidth.
+**Use Case:** Huffman coding, a widely used entropy encoding algorithm, is adept at achieving significant compression ratios by assigning shorter codes to more frequent symbols or data segments. This approach proves particularly effective in compressing images and videos, where reducing redundancy in pixel values or frames can lead to substantial savings in storage or transmission bandwidth.
 
 **Challenges:** The primary challenges in image and video compression include balancing compression ratio with computational complexity and ensuring that decompression does not degrade visual fidelity. Huffman coding must efficiently handle diverse data distributions within images and videos, ranging from uniform pixel values to complex visual patterns across frames.
 
@@ -480,39 +429,14 @@ Huffman coding, a widely used entropy encoding algorithm, is adept at achieving 
 - Decompression Efficiency: Decompressing Huffman-encoded data remains computationally feasible, ensuring rapid access to compressed media for viewing or editing.
 
 **Complexity Analysis**
+- **Time Complexity:** The Huffman tree and encoding/decoding operations typically operate in O(n log n) time complexity, where n represents the number of symbols or data segments being processed.
+- **Space Complexity:** The space overhead in Huffman coding is O(n) space, where n is the number of unique symbols or data segments.
 
-Time Complexity: The Huffman tree and encoding/decoding operations typically operate in O(n log n) time complexity, where n represents the number of symbols or data segments being processed.
-
-Space Complexity: The space overhead in Huffman coding is O(n) space, where n is the number of unique symbols or data segments.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/huffman.cpp)
+[Code for Huffman Coding](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/huffman.cpp) [[18]](https://www.topcoder.com/thrive/articles/huffman-coding-and-decoding-algorithm)
 
 * * *
 
-### 17. **Securing User Data**
-
-**Algorithm:** Hashing
-
-In the realm of data security, ensuring the integrity and confidentiality of user information is paramount. SHA-256 (Secure Hash Algorithm 256-bit) stands as a cornerstone cryptographic hash function, widely employed to safeguard sensitive data through its robust hashing properties. In LinkedIn, handling user information, utilizes SHA-256 to hash passwords and verify data integrity, enhancing protection against unauthorized access and data tampering
-
-**Challenges:** The primary challenges in securing user data include maintaining computational efficiency while upholding cryptographic strength and ensuring compatibility across various software and hardware environments. LinkedIn must implement SHA-256 in a manner that safeguards user passwords and critical information against brute-force attacks and cryptographic vulnerabilities.
-
-**Benefits:** SHA-256 offers several advantages for securing user data:
-- Cryptographic Strength: SHA-256 produces a fixed-size 256-bit hash value, resistant to collision attacks due to its one-way hashing nature.
-- Data Integrity: By generating unique hash values for input data, SHA-256 ensures that even minor changes in input produce vastly different output hashes, facilitating data integrity verification.
-- Widespread Adoption: SHA-256 enjoys broad acceptance and implementation across software and hardware platforms, ensuring interoperability and consistent security practices.
-
-**Complexity Analysis**
-
-Time Complexity: O(n) time, where n is the size of the input data. 
-
-Space Complexity: O(1), fixed size output regardless of input.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/sha256.cpp)
-
-* * *
-
-### 18. **Missing Sections in a LinkedIn Profile**
+### 17. **Missing Sections in a LinkedIn Profile**
 
 **Algorithm:** Set Difference
 
@@ -533,45 +457,15 @@ Space Complexity: O(1), fixed size output regardless of input.
 - **Set Difference Calculation:** Compute the difference between the set of recommended sections and the set of existing sections to identify missing sections.
 - **Recommendations:** Present missing sections to users as suggestions for profile improvement.
 
-**Time Complexity:** Calculating set difference: O(n), where n is the number of sections (assuming average case for set operations).
+**Complexity Analysis:**
+- **Time Complexity:** Calculating set difference: O(n), where n is the number of sections (assuming average case for set operations).
+- **Space Complexity:** Storing sets: O(m + k), where m is the number of existing sections and k is the number of recommended sections.
 
-**Space Complexity:** Storing sets: O(m + k), where m is the number of existing sections and k is the number of recommended sections.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/setdiff.cpp)
-
-* * *
-
-### 19. **Common Skills Between Two Profiles**
-
-**Algorithm:** Longest Common Substring
-
-**Use Case:**
-LinkedIn uses the Longest Common Substring algorithm to identify overlapping skills between two user profiles. By treating each profile as a sequence of skills, the algorithm efficiently determines the longest sequence of skills that are common to both profiles. This helps LinkedIn recommend connections and opportunities based on shared competencies.
-
-**Challenges:**
-- Skill Variability: Managing diverse terminology and formats used to describe skills across different profiles.
-- Performance: Ensuring efficient processing of large profiles while maintaining accuracy in skill matching.
-- Privacy: Respecting user preferences and privacy settings while analyzing and comparing profiles.
-
-**Benefits:**
-- Enhanced Networking: Facilitates more accurate connections by highlighting common skills between profiles.
-- Personalized Recommendations: Enables LinkedIn to recommend relevant job opportunities and networking suggestions based on shared competencies.
-- User Engagement: Encourages users to connect with others who possess complementary skills, enhancing networking effectiveness.
-
-**Approach:**
-- Skill Representation: Treat each profile as a string of skills or keywords.
-- Longest Common Substring Calculation: Apply the algorithm to find the longest sequence of common skills between the two profiles.
-- Result Utilization: Use the identified common skills to suggest connections, job opportunities, and professional development activities.
-
-**Time Complexity:** Computing the Longest Common Substring: O(n * m), where n and m are the lengths of the two profiles' skill sequences (assuming average case).
-
-**Space Complexity:** Storage of skill sequences and intermediate data structures: O(n + m).
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/commonsubstring.cpp)
+[Code for Set Difference](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/setdiff.cpp) [[19]](https://www.geeksforgeeks.org/std-set_difference-in-cpp/)
 
 * * *
 
-### 20. **Geographic Search for Networking Events**
+### 18. **Geographic Search for Networking Events**
 
 **Algorithm:** KD Tree
 
@@ -592,15 +486,15 @@ LinkedIn uses the Longest Common Substring algorithm to identify overlapping ski
 - Search Implementation:** Utilize KD Tree algorithms to perform nearest neighbor searches, identifying events closest to a user's specified location.
 - Result Presentation:** Present search results to users, displaying relevant events based on proximity and user preferences.
 
-**Time Complexity:** Search Operation, O(log n), where n is the number of event locations stored in the KD Tree. This ensures efficient retrieval of nearby events.
+**Complexity Analysis:**
+- **Time Complexity:** Search Operation, O(log n), where n is the number of event locations stored in the KD Tree. This ensures efficient retrieval of nearby events.
+- **Space Complexity:** Storage of KD Tree, O(n), where n is the number of event locations, accounting for the spatial partitioning and storage overhead.
 
-**Space Complexity:** Storage of KD Tree, O(n), where n is the number of event locations, accounting for the spatial partitioning and storage overhead.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/kdtree.cpp)
+[Code for KD Tree](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/kdtree.cpp) [[20]](https://www.geeksforgeeks.org/search-and-insertion-in-k-dimensional-tree/)
 
 * * *
 
-### 21. **Optimizing Content Display Based on User Interaction**
+### 19. **Optimizing Content Display Based on User Interaction**
 
 **Algorithm:** Lazy Propagation
 
@@ -621,17 +515,17 @@ LinkedIn uses the Longest Common Substring algorithm to identify overlapping ski
 - Update Mechanism: Implement lazy updates to aggregate and propagate content metrics based on user interactions, ensuring efficient computation.
 - Display Optimization: Use updated metrics to optimize content display algorithms, promoting content with higher engagement metrics to users.
 
-**Time Complexity:** Update Operation, O(log n), where n is the number of content items or interactions. Lazy propagation minimizes the number of updates by deferring computations until necessary, optimizing overall time complexity.
+**Complexity Analysis:**
+- **Time Complexity:** Update Operation, O(log n), where n is the number of content items or interactions. Lazy propagation minimizes the number of updates by deferring computations until necessary, optimizing overall time complexity.
+- **Space Complexity:** Storage of Metrics, O(n), where n is the number of content items or interactions, plus additional space for storing propagation structures. This ensures efficient storage and retrieval of updated metrics.
 
-**Space Complexity:** Storage of Metrics, O(n), where n is the number of content items or interactions, plus additional space for storing propagation structures. This ensures efficient storage and retrieval of updated metrics.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/lazypropagation.cpp)
+[Code for Lazy Propagation](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/lazypropagation.cpp) [[21]](https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree/)
 
 * * *
 
-### 22. **Efficiently Handling Large-Scale Profile Data**
+### 20. **Efficiently Handling Large-Scale Profile Data**
 
-**Algorithm:** B-Trees
+**Algorithm:** B-Tree
 
 **Use Case:** LinkedIn can optimize the storage and retrieval of large-scale profile data using B-Trees. This balanced tree data structure efficiently manages and accesses extensive datasets, supporting LinkedIn's diverse profile information requirements across its vast user base.
 
@@ -650,54 +544,36 @@ LinkedIn uses the Longest Common Substring algorithm to identify overlapping ski
 - Query Optimization: Utilize B-Tree properties to enhance query performance, supporting rapid access to user profiles and associated information.
 - Storage Management: Manage memory and disk space efficiently to accommodate growing volumes of profile data and ensure responsive data access.
 
-**Time Complexity:** Insertion, Deletion, Retrieval, O(log n), where n is the number of profiles stored in the B-Tree. This ensures efficient handling of large-scale data operations.
+**Complexity Analysis:**
+- **Time Complexity:** Insertion, Deletion, Retrieval, O(log n), where n is the number of profiles stored in the B-Tree. This ensures efficient handling of large-scale data operations.
+- **Space Complexity:** Storage of B-Tree, O(n), where n is the number of profiles, plus additional space for tree structure overhead. B-Trees maintain efficient use of memory and disk space for large datasets.
 
-**Space Complexity:** Storage of B-Tree, O(n), where n is the number of profiles, plus additional space for tree structure overhead. B-Trees maintain efficient use of memory and disk space for large datasets.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Btree.cpp)
-
-* * *
-
-### 23. **Fast Access to Most Recent Activities**
-
-**Algorithm:** Last-In-First-Out (LIFO) Stack
-
-**Use Case:** LinkedIn can use a LIFO stack to maintain the most recent activities in chronological order, facilitating fast access to dynamic content updates and personalized recommendations for users.
-
-**Challenges:**
-- Real-Time Updates: Ensuring timely processing and delivery of recent activities to users without delays.
-- Content Management: Managing a diverse range of activities and updates across LinkedIn's platform in a streamlined manner.
-- User Engagement: Enhancing user engagement by delivering relevant and up-to-date content based on recent interactions and activities.
-
-**Benefits:**
-- Real-Time Updates: Facilitates immediate access to the latest activities and updates for users, supporting dynamic content feeds and notifications.
-- Personalization: Enables personalized recommendations and notifications based on recent user interactions and network activities.
-- Engagement Metrics: Supports the measurement and analysis of user engagement through real-time activity tracking and content delivery.
-
-**Approach:**
-- Stack Implementation:** Implement a LIFO stack data structure to store and retrieve recent activities in chronological order.
-- Content Delivery:** Utilize the stack to deliver timely updates, notifications, and personalized content recommendations to LinkedIn users.
-- Performance Optimization:** Ensure efficient stack operations to maintain responsiveness and real-time delivery of user-centric content updates.
-
-**Time Complexity:** O(1) for both push and pop.
-
-**Space Complexity:** Stack Storage, O(n), where n is the number of recent activities stored in the stack. This ensures efficient use of memory for managing recent user interactions and content updates.
-
-[Code](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/lifo.cpp)
+[Code for B Tree](https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Codes/Btree.cpp) [[22]](https://www.geeksforgeeks.org/introduction-of-b-tree-2/)
 
 * * *
 
 ## 📑 References
-- https://in.linkedin.com/
-- https://en.wikipedia.org/wiki/LinkedIn
-- https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second
-- https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/
-- https://www.geeksforgeeks.org/topological-sorting/
-- https://www.geeksforgeeks.org/std-set_difference-in-cpp/
-- https://www.geeksforgeeks.org/longest-common-substring-dp-29/
-- https://www.geeksforgeeks.org/search-and-insertion-in-k-dimensional-tree/
-- https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree/
-- https://www.geeksforgeeks.org/introduction-of-b-tree-2/
-- https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/
+- [1] LinkedIn: [https://in.linkedin.com/](https://in.linkedin.com/)
+- [2] Wikipedia: [https://en.wikipedia.org/wiki/LinkedIn](https://en.wikipedia.org/wiki/LinkedIn)
+- [3] LinkedIn Blog: [https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second](https://blog.quastor.org/p/linkedin-serves-5-million-user-profiles-per-second)
+- [4] Breadth First Search Algorithm: [https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
+- [5] Longest Common Subsequence Algorithm: [https://takeuforward.org/data-structure/longest-common-subsequence-dp-25/](https://takeuforward.org/data-structure/longest-common-subsequence-dp-25/)
+- [6] Trie Auto Complete Feature: [https://www.geeksforgeeks.org/auto-complete-feature-using-trie/](https://www.geeksforgeeks.org/auto-complete-feature-using-trie/)
+- [7] Heap Sort: [https://www.hackerearth.com/practice/algorithms/sorting/heap-sort/tutorial/](https://www.hackerearth.com/practice/algorithms/sorting/heap-sort/tutorial/)
+- [8] Robin Karp Algorithm: [https://cp-algorithms.com/string/rabin-karp.html](https://cp-algorithms.com/string/rabin-karp.html)
+- [9] Quick Sort: [https://www.geeksforgeeks.org/quick-sort-algorithm/](https://www.geeksforgeeks.org/quick-sort-algorithm/)
+- [10] Aho Corasick Algorithm: [https://cp-algorithms.com/string/aho_corasick.html](https://cp-algorithms.com/string/aho_corasick.html)
+- [11] Trie Data Structure: [https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/)
+- [12] Z Algorithm: [https://cp-algorithms.com/string/z-function.html](https://cp-algorithms.com/string/z-function.html)
+- [13] Topological Sort Algorithm: [https://www.geeksforgeeks.org/topological-sorting/](https://www.geeksforgeeks.org/topological-sorting/)
+- [14] Radix Sort: [https://www.javatpoint.com/radix-sort](https://www.javatpoint.com/radix-sort)
+- [15] Quick Select Algorithm: [https://www.geeksforgeeks.org/quickselect-algorithm/](https://www.geeksforgeeks.org/quickselect-algorithm/)
+- [16] Merge Sort Algorithm: [https://www.geeksforgeeks.org/merge-sort/](https://www.geeksforgeeks.org/merge-sort/)
+- [17] Heap Data Structure: [https://www.geeksforgeeks.org/heap-data-structure/](https://www.geeksforgeeks.org/heap-data-structure/)
+- [18] Huffman Coding and Decoding: [https://www.topcoder.com/thrive/articles/huffman-coding-and-decoding-algorithm](https://www.topcoder.com/thrive/articles/huffman-coding-and-decoding-algorithm)
+- [19] Set Difference: [https://www.geeksforgeeks.org/std-set_difference-in-cpp/](https://www.geeksforgeeks.org/std-set_difference-in-cpp/)
+- [20] K Dimensional Tree: [https://www.geeksforgeeks.org/search-and-insertion-in-k-dimensional-tree/](https://www.geeksforgeeks.org/search-and-insertion-in-k-dimensional-tree/)
+- [21] Lazy propagation in Segment Tree: [https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree/](https://www.geeksforgeeks.org/lazy-propagation-in-segment-tree/)
+- [22] B tree: [https://www.geeksforgeeks.org/introduction-of-b-tree-2/](https://www.geeksforgeeks.org/introduction-of-b-tree-2/)
 
   * * *
