@@ -113,7 +113,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 1. 🤝**Connection Suggestions**
 
-<img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/connections.png" alt="connections">
+<img width="800" alt="connections" src="https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/26fe72fc-b5ee-4fbe-acaf-4329d4116273">
 
 **Algorithm:** Breadth First Search (BFS)
 
@@ -142,9 +142,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 2. 🔍**Profile Matching for Job Fit**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/job-match.jpg" alt="jobmatch">
-</p>
+![job-match](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/63f186db-56e8-4718-8215-9ab832115583)
 
 **Algorithm**: Knuth-Morris-Pratt (KMP) Algorithm
 
@@ -175,9 +173,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 3. ✨**Search with Auto Suggestion**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/auto.png" alt="auto">
-</p>
+![auto](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/3a77a5e9-54fa-46a0-8628-0fd4154b4aa4)
 
 **Algorithm:** Trie Data Structure with Autocomplete Feature
 
@@ -210,9 +206,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 4. 🌟**Job Recommendations for Users**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/job-recommendataion.png" alt="jobs">
-</p>
+![job-recommendataion](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/8fc4c6fe-2e03-4452-abf8-f487e7f3d403)
 
 **Algorithm:** Heap Sort
 
@@ -242,9 +236,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 5. 🔍**Similar Profile Suggestions**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/similar-profile.png" alt="similar">
-</p>
+![similar-profile](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/6e6a3297-921f-420c-8a13-1a6f3139522a)
 
 **Algorithm:** Rabin-Karp Algorithm
 
@@ -275,9 +267,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 6. 📈 **Trending Content Identification**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/trending-content.png" alt="trending">
-</p>
+![trending-content](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/c2552c0c-2583-4aa6-a0bf-c4572b30aec1)
 
 **Algorithm:** Quick Sort
 
@@ -307,9 +297,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 7. 🕵️‍♂️ **Spam Content Detection**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/spam.png" alt="spam">
-</p>
+![spam](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/9cccce11-523c-407b-8cf5-e17ec21cb41e)
 
 **Algorithm:** Aho-Corasick Algorithm
 
@@ -342,9 +330,7 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 8. ✍️ **Profile Update Suggestions**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/profile-update.png" alt="update">
-</p>
+![profile-update](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/fda5a009-792e-4386-8227-9e9ec09c9797)
 
 Algorithm: Trie Data Structure
 
@@ -379,9 +365,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 9. 🔍 **Keyword Matching for Posts**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/post.png" alt="posts">
-</p>
+![post](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/11b85293-8164-49c2-999d-fb9a1709c770)
 
 **Algorithm:** Z Algorithm
 
@@ -415,9 +399,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 10. 📊 **Group Recommendation**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/groups.png" alt="groups">
-</p>
+![groups](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/2221b7ca-c135-416c-a36d-3c462b67432d)
 
 **Algorithm:** Topological Sort Algorithm
 
@@ -451,9 +433,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 11. 📈 **Trending Skills Identification**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/trending-skills.png" alt="skills">
-</p>
+![trending-skill](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/d4ee67d2-68c7-44cb-b57a-a474b8523a6c)
 
 **Algorithm:** Radix Sort
 
@@ -486,9 +466,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 12. 🕵️‍♀️ **Fraudulent Account Detection**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/fraud.png" alt="fraud">
-</p>
+![fraud](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/27966785-de83-49b2-9a85-de75e3e431a9)
 
 **Algorithm:** Quick Select Algorithm
 
@@ -519,13 +497,9 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 13. 📬 **Sorting Based on Filters**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/post-sort.png" alt="postsort">
-</p>
+![post-sort](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/8a180d3b-4a25-4037-827d-9a5400b676de)
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/message-sort.png" alt="messagesort" height="500px" width="600px">
-</p>
+![message-sort](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/c39baba0-875f-49bc-8958-56e0c65d0973)
 
 **Algorithm:** Merge Sort
 
@@ -560,9 +534,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 14. 📄 **Calculating Resume ATS Score Using Specific Parameters**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/ats.jpg" alt="ats">
-</p>
+![ats](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/9fbf1a93-340b-47d4-b277-4aef9685fc17)
 
 **Algorithm:** Trie Data Structure
 
@@ -596,9 +568,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 15. 🚫 **Handling "Not Interested" Selection on Posts or Ads**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/not-interested.png" alt="not">
-</p>
+![not-interested](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/5de1a370-ccb4-48ed-8cf2-957682c5e0ca)
 
 **Algorithm:** Hash Table
 
@@ -662,9 +632,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 17. 📊 **Scoring Algorithm for SSI Score in LinkedIn**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/ssi.png" alt="ssi">
-</p>
+![ssi](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/f617cf87-61c0-450d-b1e8-eb249f3713f0)
 
 **Algorithm:** Dynamic Programming
 
@@ -695,9 +663,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 18. 🌍 **Geographic Search for Networking Events**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/nearby.png" alt="nearby" height="800px" width="500px">
-</p>
+![nearby](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/a82d547f-dd7b-41fa-84ee-d9fa99b14119)
 
 **Algorithm:** KD Tree
 
@@ -757,9 +723,7 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 20. 📊 **Efficiently Handling Large-Scale Profile Data**
 
-<p align="center">
-  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/data.png" alt="data">
-</p>
+![data](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/4a7a6632-ebad-44f4-8d4d-9011ae0c7c19)
 
 **Algorithm:** B-Tree
 
