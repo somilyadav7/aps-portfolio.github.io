@@ -113,6 +113,8 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 1. 🤝**Connection Suggestions**
 
+<img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/connections.png" alt="connections">
+
 **Algorithm:** Breadth First Search (BFS)
 
 **Use Case:** LinkedIn aims to enhance its user experience by providing connection suggestions to users. These suggestions often include second and third-degree connections, which are people that the user does not know directly but is connected to through mutual connections. 
@@ -139,6 +141,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 * * *
 
 ### 2. 🔍**Profile Matching for Job Fit**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/job-match.jpg" alt="jobmatch">
+</p>
 
 **Algorithm**: Knuth-Morris-Pratt (KMP) Algorithm
 
@@ -168,6 +174,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 * * *
 
 ### 3. ✨**Search with Auto Suggestion**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/auto.png" alt="auto">
+</p>
 
 **Algorithm:** Trie Data Structure with Autocomplete Feature
 
@@ -200,6 +210,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 4. 🌟**Job Recommendations for Users**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/job-recommendataion.png" alt="jobs">
+</p>
+
 **Algorithm:** Heap Sort
 
 **Use Case:** LinkedIn provides real-time job recommendations to its users, ensuring they have access to the most relevant job opportunities based on their profiles, search history, and platform activity. This feature is crucial for both job seekers looking for new opportunities and employers seeking the best candidates.
@@ -227,6 +241,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 * * *
 
 ### 5. 🔍**Similar Profile Suggestions**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/similar-profile.png" alt="similar">
+</p>
 
 **Algorithm:** Rabin-Karp Algorithm
 
@@ -257,6 +275,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ### 6. 📈 **Trending Content Identification**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/trending-content.png" alt="trending">
+</p>
+
 **Algorithm:** Quick Sort
 
 **Use Case:** LinkedIn aims to keep users engaged by displaying the most popular and engaging posts and articles prominently. Identifying and showcasing trending content ensures that users are presented with relevant and timely information, fostering a dynamic and interactive platform.
@@ -284,6 +306,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 * * *
 
 ### 7. 🕵️‍♂️ **Spam Content Detection**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/spam.png" alt="spam">
+</p>
 
 **Algorithm:** Aho-Corasick Algorithm
 
@@ -315,6 +341,10 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 * * *
 
 ### 8. ✍️ **Profile Update Suggestions**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/profile-update.png" alt="update">
+</p>
 
 Algorithm: Trie Data Structure
 
@@ -349,6 +379,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 9. 🔍 **Keyword Matching for Posts**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/post.png" alt="posts">
+</p>
+
 **Algorithm:** Z Algorithm
 
 **Use Case:** LinkedIn aims to enhance the accuracy of its search results and content recommendations by efficiently matching keywords within posts and articles. Accurate keyword matching ensures that users find relevant content quickly, whether they are searching for specific topics, industry insights, or professional advice. By leveraging the Z algorithm, LinkedIn can improve the precision of its search functionality and content recommendations, enhancing user satisfaction and engagement.
@@ -380,6 +414,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 * * *
 
 ### 10. 📊 **Group Recommendation**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/groups.png" alt="groups">
+</p>
 
 **Algorithm:** Topological Sort Algorithm
 
@@ -413,6 +451,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 11. 📈 **Trending Skills Identification**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/trending-skills.png" alt="skills">
+</p>
+
 **Algorithm:** Radix Sort
 
 **Use Case:** LinkedIn aims to identify trending skills that are frequently mentioned in user profiles and job postings. By doing so, LinkedIn can provide insights into current industry demands and help users enhance their profiles to align with market trends. Additionally, identifying trending skills can help LinkedIn suggest relevant courses and learning materials to users, further enhancing their professional development.
@@ -444,6 +486,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 12. 🕵️‍♀️ **Fraudulent Account Detection**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/fraud.png" alt="fraud">
+</p>
+
 **Algorithm:** Quick Select Algorithm
 
 **Use Case:** LinkedIn aims to enhance its security measures by identifying and prioritizing the detection of fraudulent accounts based on suspicious activity metrics. Detecting and mitigating fraudulent activity is crucial to maintaining the integrity and trustworthiness of the platform. By using the Quick Select algorithm, LinkedIn can efficiently identify the top K suspicious accounts, allowing for focused and effective fraud detection efforts.
@@ -471,7 +517,15 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 * * *
 
-### 13. 📬 **Sorting Messages and Notifications**
+### 13. 📬 **Sorting Based on Filters**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/post-sort.png" alt="postsort">
+</p>
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/message-sort.png" alt="messagesort" height="500px" width="600px">
+</p>
 
 **Algorithm:** Merge Sort
 
@@ -506,6 +560,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 14. 📄 **Calculating Resume ATS Score Using Specific Parameters**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/ats.jpg" alt="ats">
+</p>
+
 **Algorithm:** Trie Data Structure
 
 **Use Case:** LinkedIn's ATS (Applicant Tracking System) score calculation aims to evaluate resumes based on specific parameters such as keywords, experience, education, and skills. A Trie data structure can be effectively used to store and match keywords and phrases from resumes, enabling quick and efficient scoring.
@@ -537,6 +595,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 * * *
 
 ### 15. 🚫 **Handling "Not Interested" Selection on Posts or Ads**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/not-interested.png" alt="not">
+</p>
 
 **Algorithm:** Hash Table
 
@@ -600,6 +662,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 
 ### 17. 📊 **Scoring Algorithm for SSI Score in LinkedIn**
 
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/ssi.png" alt="ssi">
+</p>
+
 **Algorithm:** Dynamic Programming
 
 **Use Case:** LinkedIn computes the Social Selling Index (SSI) score to quantify a user's effectiveness in social selling activities. Using dynamic programming, LinkedIn calculates this score based on several key metrics.
@@ -628,6 +694,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 * * *
 
 ### 18. 🌍 **Geographic Search for Networking Events**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/nearby.png" alt="nearby" height="800px" width="500px">
+</p>
 
 **Algorithm:** KD Tree
 
@@ -686,6 +756,10 @@ By following these steps, LinkedIn can effectively implement the trie data struc
 * * *
 
 ### 20. 📊 **Efficiently Handling Large-Scale Profile Data**
+
+<p align="center">
+  <img src="https://github.com/somilyadav7/aps-portfolio.github.io/blob/main/Images/data.png" alt="data">
+</p>
 
 **Algorithm:** B-Tree
 
