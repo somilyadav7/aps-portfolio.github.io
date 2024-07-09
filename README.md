@@ -52,6 +52,8 @@ This portfolio showcases how LinkedIn can be significantly improved by enhancing
 
   LinkedIn[[2]](https://en.wikipedia.org/wiki/LinkedIn) has over 930 million users in 200 countries. At peak load, the site is serving nearly 5 million user profile pages a second (a user’s profile page lists things like their job history, skills, recommendations, cringy influencer posts, etc.)
 
+![arch_soa_0](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/835662e7-5821-466d-944f-7c6ab7305d1e)
+
 The workload is extremely read-heavy, where 99% of requests are reads and less than 1% are writes (you probably spend a lot more time stalking on LinkedIn versus updating your profile).
 
 To manage the increase in traffic, LinkedIn incorporated Couchbase (a distributed NoSQL database) into their stack as a caching layer. They’ve been able to serve 99% of requests with this caching system, which drastically reduced latency and cost.
@@ -88,6 +90,9 @@ If the user profile isn’t cached locally in the Router node, then it will send
 
 For writes (when a user changes their job history, location, etc.), these are first done on Espresso storage nodes. The system is eventually consistent, so the writes are copied over to the Couchbase cache asynchronously.
 
+![f915f542-3a9d-4135-ad33-9603386e87bd_1777x1336](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/ff4dbda1-639f-4c5b-8857-24e01b8a190c)
+
+
 In order to minimize the amount of traffic that gets directed to Espresso, LinkedIn used three core design principles
 - Guaranteed Resilience against Couchbase Failures
 - All-time Cached Data Availability
@@ -118,6 +123,9 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 **Algorithm:** Breadth First Search (BFS)
 
 **Use Case:** LinkedIn aims to enhance its user experience by providing connection suggestions to users. These suggestions often include second and third-degree connections, which are people that the user does not know directly but is connected to through mutual connections. 
+
+![Screenshot 2024-07-09 112206](https://github.com/somilyadav7/aps-portfolio.github.io/assets/95069908/0769ecca-7016-4bd8-97e2-01b75ef9fec8)
+
 
 **Challenges:**
 - Algorithm should efficiently navigating LinkedIn's vast user network.
@@ -598,6 +606,8 @@ Algorithm Implementation
 
 ### 16. 🖼️ **Image and Video Compression**
 
+![Huffman](https://media.geeksforgeeks.org/wp-content/uploads/20220906180456/6.png)
+
 **Algorithm:** Huffman Coding
 
 **Use Case:** Huffman coding, a widely used entropy encoding algorithm, is adept at achieving significant compression ratios by assigning shorter codes to more frequent symbols or data segments. This approach proves particularly effective in compressing images and videos, where reducing redundancy in pixel values or frames can lead to substantial savings in storage or transmission bandwidth.
@@ -690,6 +700,8 @@ Algorithm Implementation
 * * *
 
 ### 19. 🖥️ **Optimizing Content Display Based on User Interaction**
+
+![Lazy](https://he-s3.s3.amazonaws.com/media/uploads/eec15d3.jpg)
 
 **Algorithm:** Lazy Propagation
 
