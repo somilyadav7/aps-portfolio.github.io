@@ -102,15 +102,15 @@ LinkedIn's scalable caching architecture, combining Espresso and Couchbase, effi
 
 ## Objectives
 
-1. Applying data structures and algorithms (DSA) from the Algorithmic Problem Solving (APS) course to enhance recommendation systems on Flipkart.
+**1.** Applying theoretical concepts from Data Structures and Algorithms (DSA) and Algorithmic Problem Solving (APS) course to practical, real-world problems within the LinkedIn platform.
 
-2. Optimizing search algorithms to improve user experience and facilitate quick product discovery on the Flipkart platform.
+**2.** Addressing specific business challenges faced by LinkedIn through the application of algorithmic problem solving.
 
-3. Developing robust network analysis techniques to optimize logistics and supply chain management within Flipkart's operations.
+**3.** Exploring and implementing algorithmic solutions that enhance LinkedIn search functionality, recommendation systems, network analysis and user engagement.
 
-4. Enhancing content recommendation engines to personalize product suggestions based on user behavior and preferences.
+**4.** Optimizing network analysis and connection suggestions to foster more meaningful professional relationships.
 
-5. Implementing DSA principles to streamline order processing and inventory management, improving operational efficiency on Flipkart.
+**5.** Improving data processing and analytics to provide valuable insights to LinkedIn users about their profiles and industry trends.
 
 ---
 
